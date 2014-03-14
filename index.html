@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en_US" dir="ltr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Web literacy tags</title>
+  <link href="https://s3-us-west-2.amazonaws.com/makerstrap/makerstrap.complete.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="examples.css">
+</head>
+<body>
+  <div class="container">
+    <h1></h1>
+    <input class="form-control" id="tagger">
+    <h3 id="tag"></h3>
+  </div>
+<!--   <input class="form-control" id="tagger-tag"> -->
+
+  <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+  <script>
+
+      var lang = 'en-US';
+      var name = 'weblitmap_1.0_' + lang;
+      var literacies = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('term'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        limit: 20,
+        prefetch: {
+          url: name + '.json'
+        }
+      });
+
+    literacies.initialize();
+
+    $('#tagger').typeahead(null, {
+      name: 'literacies',
+      displayKey: 'term',
+      source: literacies.ttAdapter()
+    })
+    .on('typeahead:selected', function(e, data) {
+      $('#tag').html(data.tags[0]);
+    })
+    .on('typeahead:autocompleted', function(e, data) {
+      $('#tag').html(data.tags[0]);
+    });
+  </script>
+</body>
+</html>

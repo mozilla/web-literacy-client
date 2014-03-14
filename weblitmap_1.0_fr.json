@@ -1,0 +1,100 @@
+[
+  {
+    "term": "Navigation",
+    "description": "Utiliser des outils logiciels pour naviguer sur le Web",
+    "tags": [
+      "WBLIT-0"
+    ]
+  },
+  {
+    "term": "Mécanismes du web",
+    "description": "Comprendre l‘écosystème du web",
+    "tags": [
+      "WBLIT-1"
+    ]
+  },
+  {
+    "term": "Recherche",
+    "description": "Trouver de l‘information, des gens et des ressources via le web",
+    "tags": [
+      "WBLIT-2"
+    ]
+  },
+  {
+    "term": "Crédibilité",
+    "description": "Évaluer avec esprit critique les informations trouvées sur le web",
+    "tags": [
+      "WBLIT-3"
+    ]
+  },
+  {
+    "term": "Sécurité",
+    "description": "S‘assurer de la sûreté des systèmes, des identités et du contenu",
+    "tags": [
+      "WBLIT-4"
+    ]
+  },
+  {
+    "term": "Composer pour le web",
+    "description": "Créer et maintenir du contenu en ligne",
+    "tags": [
+      "WBLIT-5"
+    ]
+  },
+  {
+    "term": "Remixer",
+    "description": "Modifier des ressources en ligne existantes pour créer de nouvelles choses",
+    "tags": [
+      "WBLIT-6"
+    ]
+  },
+  {
+    "term": "Design et accessibilité",
+    "description": "Créer des communications universellement efficaces grâce à des ressources web",
+    "tags": [
+      "WBLIT-7"
+    ]
+  },
+  {
+    "term": "Coder et scripter",
+    "description": "Créer des expériences interactives sur le web",
+    "tags": [
+      "WBLIT-8"
+    ]
+  },
+  {
+    "term": "Infrastructure",
+    "description": "Créer des expériences interactives sur le web",
+    "tags": [
+      "WBLIT-9"
+    ]
+  },
+  {
+    "term": "Partager et collaborer",
+    "description": "Créer et publier ensemble des ressources web",
+    "tags": [
+      "WBLIT-10"
+    ]
+  },
+  {
+    "term": "Participation communautaire",
+    "description": "Rejoindre des communautés en ligne et comprendre leurs usages",
+    "tags": [
+      "WBLIT-11"
+    ]
+  },
+  {
+    "term": "Vie privée",
+    "description": "Considérer les conséquences du partage de données en ligne",
+    "tags": [
+      "WBLIT-12"
+    ]
+  },
+  {
+    "term": "Pratiques ouvertes",
+    "description": "Contribuer à garder le Web démocratique et accessible universellement",
+    "tags": [
+      "WBLIT-13"
+    ]
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "term": "Navigation",
+    "description": "Using software tools to browse the web",
+    "tags": [
+      "WBLIT-0"
+    ]
+  },
+  {
+    "term": "Web Mechanics",
+    "description": "Understanding the web ecosystem",
+    "tags": [
+      "WBLIT-1"
+    ]
+  },
+  {
+    "term": "Search",
+    "description": "Locating information, people and resources via the web",
+    "tags": [
+      "WBLIT-2"
+    ]
+  },
+  {
+    "term": "Credibility",
+    "description": "Critically evaluating information found on the web",
+    "tags": [
+      "WBLIT-3"
+    ]
+  },
+  {
+    "term": "Security",
+    "description": "Keeping systems, identities, and content safe",
+    "tags": [
+      "WBLIT-4"
+    ]
+  },
+  {
+    "term": "Composing for the Web",
+    "description": "Creating and curating content for the web",
+    "tags": [
+      "WBLIT-5"
+    ]
+  },
+  {
+    "term": "Remixing",
+    "description": "Modifying existing web resources to create something new",
+    "tags": [
+      "WBLIT-6"
+    ]
+  },
+  {
+    "term": "Design and Accessibility",
+    "description": "Creating universally effective communications through web resources",
+    "tags": [
+      "WBLIT-7"
+    ]
+  },
+  {
+    "term": "Coding/Scripting",
+    "description": "Creating interactive experiences on the web",
+    "tags": [
+      "WBLIT-8"
+    ]
+  },
+  {
+    "term": "Infrastructure",
+    "description": "Understanding the Internet stack",
+    "tags": [
+      "WBLIT-9"
+    ]
+  },
+  {
+    "term": "Sharing and Collaborating",
+    "description": "Jointly creating and providing access to web resources",
+    "tags": [
+      "WBLIT-10"
+    ]
+  },
+  {
+    "term": "Community Participation",
+    "description": "Getting involved in web communities and understanding their practices",
+    "tags": [
+      "WBLIT-11"
+    ]
+  },
+  {
+    "term": "Privacy",
+    "description": "Examining the consequences of sharing data online",
+    "tags": [
+      "WBLIT-12"
+    ]
+  },
+  {
+    "term": "Open Practices",
+    "description": "Helping to keep the web democratic and universally accessible",
+    "tags": [
+      "WBLIT-13"
+    ]
+  }
+]
