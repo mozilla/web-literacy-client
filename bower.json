@@ -5,8 +5,5 @@
   "authors": [
     "Kate Hudson <k88hudson@gmail.com>"
   ],
-  "license": "MIT",
-  "dependencies": {
-    "devbridge-autocomplete": "1.2.9"
-  }
+  "license": "MIT"
 }

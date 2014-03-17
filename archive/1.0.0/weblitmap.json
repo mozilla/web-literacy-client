@@ -1,0 +1,92 @@
+{
+  "title": "Web Literacy Map",
+  "titleKey": "WBLIT-MAP",
+  "version": "1.1.0",
+  "descriptionSuffix": "_desc",
+  "literacies": [
+    {
+      "term": "Navigation",
+      "description": "Using software tools to browse the Web",
+      "key": "WBLIT-0",
+      "deprecates": []
+    },
+    {
+      "term": "Web Mechanics",
+      "description": "Understanding the Web ecosystem",
+      "key": "WBLIT-1",
+      "deprecates": []
+    },
+    {
+      "term": "Search",
+      "description": "Locating information, people and resources via the Web",
+      "key": "WBLIT-2",
+      "deprecates": []
+    },
+    {
+      "term": "Credibility",
+      "description": "Critically evaluating information found on the Web",
+      "key": "WBLIT-3",
+      "deprecates": []
+    },
+    {
+      "term": "Security",
+      "description": "Keeping systems, identities, and content safe",
+      "key": "WBLIT-4",
+      "deprecates": []
+    },
+    {
+      "term": "Composing for the Web",
+      "description": "Creating and curating content for the Web",
+      "key": "WBLIT-5",
+      "deprecates": []
+    },
+    {
+      "term": "Remixing",
+      "description": "Modifying existing Web resources to create something new",
+      "key": "WBLIT-6",
+      "deprecates": []
+    },
+    {
+      "term": "Design and Accessibility",
+      "description": "Creating universally effective communications through Web resources",
+      "key": "WBLIT-7",
+      "deprecates": []
+    },
+    {
+      "term": "Coding/Scripting",
+      "description": "Creating interactive experiences on the Web",
+      "key": "WBLIT-8",
+      "deprecates": []
+    },
+    {
+      "term": "Infrastructure",
+      "description": "Understanding the Internet stack",
+      "key": "WBLIT-9",
+      "deprecates": []
+    },
+    {
+      "term": "Sharing and Collaborating",
+      "description": "Creating and providing access to Web resources",
+      "key": "WBLIT-10",
+      "deprecates": []
+    },
+    {
+      "term": "Community Participation",
+      "description": "Getting involved in web communities and understanding their practices",
+      "key": "WBLIT-11",
+      "deprecates": []
+    },
+    {
+      "term": "Privacy",
+      "description": "Examining the consequences of sharing data online",
+      "key": "WBLIT-12",
+      "deprecates": []
+    },
+    {
+      "term": "Open Practices",
+      "description": "Helping to keep the Web democratic and universally accessible",
+      "key": "WBLIT-13",
+      "deprecates": []
+    }
+  ]
+}

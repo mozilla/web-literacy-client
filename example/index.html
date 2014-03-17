@@ -16,10 +16,12 @@
   float: left;
   width: 250px;
   margin-right: 5px;
+  margin-bottom: 5px;
 }
 .auto-tag {
   float: left;
   margin-right: 5px;
+  margin-bottom: 5px;
 }
 </style>
 
@@ -40,7 +42,7 @@
           <div class="tag-input-wrapper">
             <div class="input-group">
               <input class="form-control" id="tagger">
-              <div class="input-group-btn">
+             <!--  <div class="input-group-btn">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <li><a href="#">Action</a></li>
@@ -49,7 +51,7 @@
                   <li class="divider"></li>
                   <li><a href="#">Separated link</a></li>
                 </ul>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -59,16 +61,17 @@
 
 
   <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
-  <script src="bower_components/devbridge-autocomplete/dist/jquery.autocomplete.js"></script>
+  <script src="autocomplete.js"></script>
   <script>
 
       var name = 'weblitmap_1.0_';
       var suggestions = [];
+      var strings = {};
 
       $('#tagger').autocomplete({
         lookup: suggestions,
         onSelect: function(suggestion) {
-          $('#tag').append('<a class="btn btn-primary auto-tag">' + suggestion.value + '</a>');
+          $('#tag').append('<a class="btn btn-primary auto-tag" data-tag="' + suggestion.data.tags[0] + '">' + suggestion.value + '</a>');
           $('#tagger').val('');
           suggestions = $.grep(suggestions, function(item) {
             return item.value !== suggestion.value;
@@ -80,17 +83,22 @@
       });
 
       function loadJSON(e) {
-        console.log(e);
-        $.getJSON(name + (this.value || 'en-US') + '.json', function(data) {
 
+        $.getJSON(name + (this.value || 'en-US') + '.json', function(data) {
+          strings = {};
           suggestions = data.map(function(item, i) {
+            item.tags.forEach(function(tag) {
+              strings[tag] = item.term;
+            });
             return {
               value: item.term,
               data: item
             };
           });
 
-          console.log(suggestions);
+          $('#tag .auto-tag').each(function(i, el) {
+            $(el).html(strings[el.getAttribute('data-tag')]);
+          });
 
           $('#tagger').autocomplete().setOptions({
             lookup: suggestions

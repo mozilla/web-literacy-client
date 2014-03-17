@@ -1,0 +1,22 @@
+{
+  "name": "weblit-keys",
+  "version": "0.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/k88hudson/weblit-keys.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/k88hudson/weblit-keys/issues"
+  },
+  "homepage": "https://github.com/k88hudson/weblit-keys",
+  "dependencies": {
+    "grunt": "~0.4.4"
+  }
+}
