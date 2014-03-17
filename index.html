@@ -5,44 +5,104 @@
   <meta charset="utf-8">
   <title>Web literacy tags</title>
   <link href="https://s3-us-west-2.amazonaws.com/makerstrap/makerstrap.complete.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="examples.css">
+<style>
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+
+.tag-input-wrapper {
+  float: left;
+  width: 250px;
+  margin-right: 5px;
+}
+.auto-tag {
+  float: left;
+  margin-right: 5px;
+}
+</style>
+
 </head>
 <body>
   <div class="container">
-    <h1></h1>
-    <input class="form-control" id="tagger">
-    <h3 id="tag"></h3>
+    <h2 class="text-center">Autocompletion Web lit standard</h2>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <select id="language" class="form-control">
+            <option value="en-US">English</option>
+            <option value="fr">Français</option>
+          </select>
+        </p>
+        <div class="tags-wrapper">
+          <span id="tag"></span>
+          <div class="tag-input-wrapper">
+            <div class="input-group">
+              <input class="form-control" id="tagger">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-<!--   <input class="form-control" id="tagger-tag"> -->
+
 
   <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
-  <script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+  <script src="bower_components/devbridge-autocomplete/dist/jquery.autocomplete.js"></script>
   <script>
 
-      var lang = 'en-US';
-      var name = 'weblitmap_1.0_' + lang;
-      var literacies = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('term'),
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-        limit: 20,
-        prefetch: {
-          url: name + '.json'
+      var name = 'weblitmap_1.0_';
+      var suggestions = [];
+
+      $('#tagger').autocomplete({
+        lookup: suggestions,
+        onSelect: function(suggestion) {
+          $('#tag').append('<a class="btn btn-primary auto-tag">' + suggestion.value + '</a>');
+          $('#tagger').val('');
+          suggestions = $.grep(suggestions, function(item) {
+            return item.value !== suggestion.value;
+          });
+          $('#tagger').autocomplete().setOptions({
+            lookup: suggestions
+          });
         }
       });
 
-    literacies.initialize();
+      function loadJSON(e) {
+        console.log(e);
+        $.getJSON(name + (this.value || 'en-US') + '.json', function(data) {
 
-    $('#tagger').typeahead(null, {
-      name: 'literacies',
-      displayKey: 'term',
-      source: literacies.ttAdapter()
-    })
-    .on('typeahead:selected', function(e, data) {
-      $('#tag').html(data.tags[0]);
-    })
-    .on('typeahead:autocompleted', function(e, data) {
-      $('#tag').html(data.tags[0]);
-    });
+          suggestions = data.map(function(item, i) {
+            return {
+              value: item.term,
+              data: item
+            };
+          });
+
+          console.log(suggestions);
+
+          $('#tagger').autocomplete().setOptions({
+            lookup: suggestions
+          });
+        });
+      }
+
+      loadJSON();
+
+      $('#language').change(loadJSON);
+
+
   </script>
 </body>
 </html>
