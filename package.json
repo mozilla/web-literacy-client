@@ -18,5 +18,8 @@
   "homepage": "https://github.com/k88hudson/weblit-keys",
   "dependencies": {
     "grunt": "~0.4.4"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "~0.3.0"
   }
 }

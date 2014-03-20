@@ -1,3 +1,4 @@
-var wlc = require('../src/web-literacy-client');
+var webLiteracyClient = require('../dist/web-literacy-client.with-langs');
 
-console.log(wlc);
+var w = new webLiteracyClient();
+console.log(w.all());
