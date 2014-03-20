@@ -18,6 +18,10 @@
   "homepage": "https://github.com/k88hudson/weblit-keys",
   "devDependencies": {
     "grunt": "~0.4.4",
-    "grunt-contrib-concat": "~0.3.0"
+    "grunt-contrib-concat": "~0.3.0",
+    "install": "~0.1.7",
+    "npm": "~1.4.6",
+    "webmaker-download-locales": "~0.1.1",
+    "grunt-contrib-clean": "~0.5.0"
   }
 }

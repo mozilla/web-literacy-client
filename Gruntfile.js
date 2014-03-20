@@ -2,11 +2,12 @@ module.exports = function(grunt) {
 
   var path = require('path');
 
-  var STRINGS_FOLDER = 'strings/';
+  var BASE_FILENAME = 'latest/weblitmap.json';
+  var STRINGS_FOLDER = 'latest/strings/';
   var FUNCTION_NAME = 'WebLiteracyClient';
-  var DEFAULT_LANG = 'en';
 
   grunt.initConfig({
+    clean: ['latest/strings', 'dist'],
     convert: {
       strings: {
         src: 'latest/weblitmap.json',
@@ -18,27 +19,40 @@ module.exports = function(grunt) {
         banner: grunt.file.read('./src/umd.header.js'),
         footer: grunt.file.read('./src/umd.footer.js'),
         process: function(src, filepath) {
-          console.log(filepath);
-          if (filepath.match('weblitmap.json')) {
-            var json = JSON.parse(src);
 
+          // Format the template
+          if (filepath.match(BASE_FILENAME)) {
+            var json = JSON.parse(src);
             return FUNCTION_NAME + '.prototype.template = ' + JSON.stringify(json.literacies, null, '  ') + ';';
+
+          // Format each locale file
           } else if (filepath.match(STRINGS_FOLDER)) {
-            var lang = path.basename(filepath, '.json');
+            var lang = filepath.replace(STRINGS_FOLDER, '').split('/')[0];
             return FUNCTION_NAME + '.prototype.langs["'+ lang +'"] = ' + src + ';';
+
+          // Return as is
           } else {
             return src;
           }
         }
       },
       dist: {
-        src: ['src/web-literacy-client.js', 'latest/**/*.json'],
+        src: ['src/web-literacy-client.js', BASE_FILENAME, STRINGS_FOLDER + '**/*.json'],
         dest: 'dist/web-literacy-client.with-langs.js',
       }
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
+
+  grunt.registerTask('transifex', 'Download files from transifex', function() {
+    var download = require('webmaker-download-locales');
+    var done = this.async();
+    download('webmaker', 'latest/strings', function(err, data) {
+      done();
+    });
+  });
 
   grunt.registerMultiTask('convert', 'Convert map to locale files', function() {
 
@@ -81,7 +95,7 @@ module.exports = function(grunt) {
         var archiveDir = 'archive/' + json.version + '/';
 
         // Write transifex file
-        var transifexFileName = STRINGS_FOLDER + DEFAULT_LANG + '.json';
+        var transifexFileName = 'weblitmap_strings.json';
         grunt.file.write(file.dest + transifexFileName, JSON.stringify(transifex, null, '  '));
         grunt.log.writeln('File "' + file.dest + transifexFileName + '" created.');
 
@@ -101,6 +115,7 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('build', ['convert', 'concat']);
+  grunt.registerTask('build', ['clean', 'convert', 'transifex', 'concat']);
+  grunt.registerTask('download', ['clean', 'transifex']);
 
 };
