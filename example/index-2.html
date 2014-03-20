@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en_US" dir="ltr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Web literacy tags</title>
+  <link href="https://s3-us-west-2.amazonaws.com/makerstrap/makerstrap.complete.min.css" rel="stylesheet">
+<style>
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+
+.tag-input-wrapper {
+  float: left;
+  width: 250px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.auto-tag {
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <h2 class="text-center">Autocompletion Web lit standard</h2>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <select id="language" class="form-control">
+            <option value="en-US">English</option>
+            <option value="fr">Français</option>
+          </select>
+        </p>
+        <div class="tags-wrapper">
+          <span id="tag"></span>
+          <div class="tag-input-wrapper">
+            <div class="input-group">
+              <input class="form-control" id="tagger">
+             <!--  <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="autocomplete.js"></script>
+  <script>
+      var suggestions = [];
+      var strings = {};
+
+      $('#tagger').autocomplete({
+        lookup: suggestions,
+        onSelect: function(suggestion) {
+          $('#tag').append('<a class="btn btn-primary auto-tag" data-tag="' + suggestion.data.tags[0] + '">' + suggestion.value + '</a>');
+          $('#tagger').val('');
+          suggestions = $.grep(suggestions, function(item) {
+            return item.value !== suggestion.value;
+          });
+          $('#tagger').autocomplete().setOptions({
+            lookup: suggestions
+          });
+        }
+      });
+
+      function loadJSON(e) {
+
+        $.getJSON('../lastest/weblitmap.json', function(data) {
+          strings = {};
+          suggestions = data.map(function(item, i) {
+            item.tags.forEach(function(tag) {
+              strings[tag] = item.term;
+            });
+            return {
+              value: item.term,
+              data: item
+            };
+          });
+
+          $('#tag .auto-tag').each(function(i, el) {
+            $(el).html(strings[el.getAttribute('data-tag')]);
+          });
+
+          $('#tagger').autocomplete().setOptions({
+            lookup: suggestions
+          });
+        });
+      }
+
+      loadJSON();
+
+      $('#language').change(loadJSON);
+
+
+  </script>
+</body>
+</html>
