@@ -41,10 +41,10 @@
 
 
   <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
-  <script src="../web-literacy-client.js"></script>
+  <script src="../src/web-literacy-client.js"></script>
   <script>
-    $.getJSON('../latest/weblitmap.json', function(data) {
-    });
+    var wlc = new WebLiteracyClient();
+    console.log(wlc, wlc.all());
 
   </script>
 </body>

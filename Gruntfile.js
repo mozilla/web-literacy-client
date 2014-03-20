@@ -22,7 +22,7 @@ module.exports = function(grunt) {
       json.literacies.forEach(function(item) {
         // Check duplicate keys
         if (output[item.tag]) {
-          grunt.fail.fatal('There was a duplicate tag found in ' + f + ', ' + item.tag + ' cannot be both "' + output[item.tag] + '" and "' + item.term + '"');
+          grunt.fail.fatal('There was a duplicate tag found : ' + item.tag + ' cannot be both "' + output[item.tag] + '" and "' + item.term + '"');
         }
         output[item.tag] = item.term;
         output[item.tag + json.descriptionSuffix] = item.description;
