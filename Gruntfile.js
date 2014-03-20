@@ -21,11 +21,11 @@ module.exports = function(grunt) {
 
       json.literacies.forEach(function(item) {
         // Check duplicate keys
-        if (output[item.key]) {
-          grunt.fail.fatal('There was a duplicate key found in ' + f + ', ' + item.key + ' cannot be both "' + output[item.key] + '" and "' + item.term + '"');
+        if (output[item.tag]) {
+          grunt.fail.fatal('There was a duplicate tag found in ' + f + ', ' + item.tag + ' cannot be both "' + output[item.tag] + '" and "' + item.term + '"');
         }
-        output[item.key] = item.term;
-        output[item.key + json.descriptionSuffix] = item.description;
+        output[item.tag] = item.term;
+        output[item.tag + json.descriptionSuffix] = item.description;
         if (item.deprecates.length) {
           item.deprecates.forEach(function(alternate) {
             output[alternate] = item.term;

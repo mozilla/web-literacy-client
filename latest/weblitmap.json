@@ -7,91 +7,91 @@
     {
         "term": "Navigation",
         "description": "Using software tools to browse the Web",
-        "key": "WBLIT-0",
+        "tag": "weblit-Navigation",
         "deprecates": []
     },
     {
         "term": "Web Mechanics",
         "description": "Understanding the Web ecosystem",
-        "key": "WBLIT-1",
+        "tag": "weblit-WebMechanics",
         "deprecates": []
     },
     {
         "term": "Search",
         "description": "Locating information, people and resources via the Web",
-        "key": "WBLIT-2",
+        "tag": "weblit-Search",
         "deprecates": []
     },
     {
         "term": "Credibility",
         "description": "Critically evaluating information found on the Web",
-        "key": "WBLIT-3",
+        "tag": "weblit-Credibility",
         "deprecates": []
     },
     {
         "term": "Security",
         "description": "Keeping systems, identities, and content safe",
-        "key": "WBLIT-4",
+        "tag": "weblit-Security",
         "deprecates": []
     },
     {
         "term": "Composing for the Web",
         "description": "Creating and curating content for the Web",
-        "key": "WBLIT-5",
+        "tag": "weblit-Composing",
         "deprecates": []
     },
     {
         "term": "Remixing",
         "description": "Modifying existing Web resources to create something new",
-        "key": "WBLIT-6",
+        "tag": "weblit-Remix",
         "deprecates": []
     },
     {
         "term": "Design and Accessibility",
         "description": "Creating universally effective communications through Web resources",
-        "key": "WBLIT-7",
+        "tag": "weblit-DesignAccessibility",
         "deprecates": []
     },
     {
         "term": "Coding/Scripting",
         "description": "Creating interactive experiences on the Web",
-        "key": "WBLIT-8",
+        "tag": "weblitCodingScripting",
         "deprecates": []
     },
     {
         "term": "Infrastructure",
         "description": "Understanding the Internet stack",
-        "key": "WBLIT-9",
+        "tag": "weblit-Infrastructure",
         "deprecates": []
     },
     {
         "term": "Sharing",
         "description": "Providing access to Web resources",
-        "key": "WBLIT-10",
-        "deprecates": []
+        "tag": "weblit-Sharing",
+        "deprecates": ["weblit-SharingCollaborating"]
     },
     {
         "term": "Collaborating",
         "description": "Creating Web resources with others",
-        "key": "WBLIT-14",
+        "tag": "weblit-Collaborating",
         "deprecates": []
     },
     {
         "term": "Community Participation",
         "description": "Getting involved in web communities and understanding their practices",
-        "key": "WBLIT-11",
+        "tag": "weblit-Community",
         "deprecates": []
     },
     {
         "term": "Privacy",
         "description": "Examining the consequences of sharing data online",
-        "key": "WBLIT-12",
+        "tag": "weblit-Privacy",
         "deprecates": []
     },
     {
         "term": "Open Practices",
         "description": "Helping to keep the Web democratic and universally accessible",
-        "key": "WBLIT-13",
+        "tag": "weblit-OpenPractices",
         "deprecates": []
     }
   ]

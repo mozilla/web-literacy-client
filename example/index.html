@@ -5,26 +5,6 @@
   <meta charset="utf-8">
   <title>Web literacy tags</title>
   <link href="https://s3-us-west-2.amazonaws.com/makerstrap/makerstrap.complete.min.css" rel="stylesheet">
-<style>
-
-.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
-.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
-.autocomplete-selected { background: #F0F0F0; }
-.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
-
-.tag-input-wrapper {
-  float: left;
-  width: 250px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-}
-.auto-tag {
-  float: left;
-  margin-right: 5px;
-  margin-bottom: 5px;
-}
-</style>
-
 </head>
 <body>
   <div class="container">
@@ -61,55 +41,10 @@
 
 
   <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
-  <script src="autocomplete.js"></script>
+  <script src="../web-literacy-client.js"></script>
   <script>
-
-      var name = 'weblitmap_1.0_';
-      var suggestions = [];
-      var strings = {};
-
-      $('#tagger').autocomplete({
-        lookup: suggestions,
-        onSelect: function(suggestion) {
-          $('#tag').append('<a class="btn btn-primary auto-tag" data-tag="' + suggestion.data.tags[0] + '">' + suggestion.value + '</a>');
-          $('#tagger').val('');
-          suggestions = $.grep(suggestions, function(item) {
-            return item.value !== suggestion.value;
-          });
-          $('#tagger').autocomplete().setOptions({
-            lookup: suggestions
-          });
-        }
-      });
-
-      function loadJSON(e) {
-
-        $.getJSON(name + (this.value || 'en-US') + '.json', function(data) {
-          strings = {};
-          suggestions = data.map(function(item, i) {
-            item.tags.forEach(function(tag) {
-              strings[tag] = item.term;
-            });
-            return {
-              value: item.term,
-              data: item
-            };
-          });
-
-          $('#tag .auto-tag').each(function(i, el) {
-            $(el).html(strings[el.getAttribute('data-tag')]);
-          });
-
-          $('#tagger').autocomplete().setOptions({
-            lookup: suggestions
-          });
-        });
-      }
-
-      loadJSON();
-
-      $('#language').change(loadJSON);
-
+    $.getJSON('../latest/weblitmap.json', function(data) {
+    });
 
   </script>
 </body>
