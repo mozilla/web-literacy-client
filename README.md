@@ -15,7 +15,7 @@ The goal of this repository is to:
 1. Commit your changes and tag your release with `npm version {{version}}`.
 1. Upload `dist/weblitmap_strings.{{version}}.json` to Transifex!
 
-### Downloading locales and building `web-literacy-client.with-langs.js`
+### Downloading new locales
 
 1. Run `grunt build`
 2. Your files will get downloaded from Transifex and `dist/web-literacy-client.with-langs.js` will be generated. Hurray!
