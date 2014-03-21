@@ -1,16 +1,21 @@
-# Web Literacy Map Keys
+# Web Literacy Client
 
-Maps 'key' tags to strings for tagging the Web Literacy standard.
+This is a utility to map each version of the Web Literacy Map to a set of machine-readable tags.
+
+The goal of this repository is to:
+
+- Store *version history* for the map with [tags](https://github.com/k88hudson/weblit-keys/releases)
+- Provide *localized versions* of each tag via [Transifex](https://www.transifex.com/projects/p/webmaker)
+- Provide translations for deprecated tags in older versions of the map by mapping them to new literacies
 
 ### Creating a new version
 
-1. Only edit the file `weblitmap.json` in the `src/` directory. Make sure you update the version number.
-1. `npm install`
-1. Run `grunt generate` - this will create a transfiex file in `dist/`.
-1. Tag your release with `npm version <version>` and `git push <remote> master --tags
-1. Upload the transifex file in `dist/` to be translated
+1. Edit `src/weblitmap.json`. Make sure you update the version number.
+1. Run `npm install`, and then `grunt generate`. This will create `dist/weblitmap_strings.{{version}}.json`, a Transifex-compatible file.
+1. Commit your changes and tag your release with `npm version {{version}}`.
+1. Upload `dist/weblitmap_strings.{{version}}.json` to Transifex!
 
-### Downloading locales and building the js with langs
+### Downloading locales and building `web-literacy-client.with-langs.js`
 
 1. Run `grunt build`
-2. Your files will get downloaded from Transifex and `web-literacy-client.with-langs.js` will be generated. Hurray!
+2. Your files will get downloaded from Transifex and `dist/web-literacy-client.with-langs.js` will be generated. Hurray!
