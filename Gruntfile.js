@@ -9,6 +9,7 @@ module.exports = function(grunt) {
   // File names
   var TEMPLATE_FILENAME = 'weblitmap.json';
   var JS_FILENAME = 'web-literacy-client.js'
+  var JS_FILENAME_WITH_LANGS ='web-literacy-client.with-langs.js'
 
   // Transifex
   var TRANSIFEX_APP = 'webliteracymap';
@@ -55,8 +56,8 @@ module.exports = function(grunt) {
         }
       },
       withLocales: {
-        src: [SRC_DIR + JS_FILENAME, SRC_DIR + TEMPLATE_FILENAME, LOCALE_DIR + '**/*.json'],
-        dest: DIST_DIR + JS_FILENAME + '.with-langs.js',
+        src: [SRC_DIR + JS_FILENAME, SRC_DIR + TEMPLATE_FILENAME, DIST_DIR + '*.json', LOCALE_DIR + '**/*.json'],
+        dest: DIST_DIR + JS_FILENAME_WITH_LANGS,
         options: {
           process: function(src, filepath) {
 
@@ -65,10 +66,16 @@ module.exports = function(grunt) {
               var json = JSON.parse(src);
               return FUNCTION_NAME + '.prototype.template = ' + JSON.stringify(json.literacies, null, '  ') + ';';
 
+            // English strings
+            } else if (filepath.match(DIST_DIR) && filepath.match('json')) {
+              return FUNCTION_NAME + '.prototype.langs["en"] = ' + src + ';';
+
             // Downloaded locales
             } else if (filepath.match(LOCALE_DIR)) {
               var lang = filepath.split('/').splice(-2, 1);
-              return FUNCTION_NAME + '.prototype.langs["'+ lang +'"] = ' + src + ';';
+              if (lang !== 'en') {
+                return FUNCTION_NAME + '.prototype.langs["'+ lang +'"] = ' + src + ';';
+              }
 
             // Other
             } else {

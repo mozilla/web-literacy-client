@@ -37,7 +37,7 @@ function WebLiteracyClient(options) {
 
   // Allow users to set language
   self.lang = function(l) {
-    if (l && !self.supportedLangs()[l]) {
+    if (l && self.supportedLangs().indexOf(l) <= -1 ) {
       return console.error('Sorry, ' + l + 'is not a supported language in this release.');
     }
     else if (l) {
