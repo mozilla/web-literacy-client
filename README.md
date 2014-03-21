@@ -4,10 +4,10 @@ This is a utility to map each version of the Web Literacy Map to a set of machin
 
 The goal of this repository is to:
 
-- Store *version history* for the map with [tags](https://github.com/k88hudson/weblit-keys/releases)
+- Store **version history** for the map with [tags](https://github.com/k88hudson/weblit-keys/releases)
 - Provide translations for deprecated tags in older versions of the map by mapping them to new literacies
-- Provide *localized versions* of each tag via [Transifex](https://www.transifex.com/projects/p/webmaker)
-- Provide support for applications using `i18n` that need to use the Web literacy 
+- Provide **localized versions** of each tag via [Transifex](https://www.transifex.com/projects/p/webmaker)
+- Provide support for applications using i18n that need to use the Web literacy Map
 
 ### Creating a new version
 
