@@ -44,15 +44,21 @@ module.exports = function(grunt) {
         src: [SRC_DIR + JS_FILENAME, SRC_DIR + TEMPLATE_FILENAME, LOCALE_DIR + '**/*.json'],
         dest: DIST_DIR + 'web-literacy-client.with-langs.js',
       }
+    },
+    transifex: {
+      options: {
+        dir: LOCALE_DIR
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.registerMultiTask('convert', 'Convert map to locale files', require('./grunt/convert-task.js');
+  grunt.registerMultiTask('convert', 'Convert map to locale files', require('./grunt/convert-task.js'));
+  grunt.registerMultiTask('transifex', 'Download files from transifex', require('./grunt/transifex-task.js'));
 
   // MAIN GRUNT TASKS
-  grunt.registerTask('build', ['clean', 'convert', 'transifex', 'concat']);
-  grunt.registerTask('download', ['clean', 'transifex']);
+  grunt.registerTask('generate', ['clean', 'convert']);
+  grunt.registerTask('build', ['clean', 'transifex', 'concat']);
 
 };

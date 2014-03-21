@@ -23,7 +23,7 @@ function specToTransifex(json) {
   return output;
 }
 
-module.exports = function() {
+module.exports = function(grunt) {
   this.files.forEach(function(filepath) {
     var spec = grunt.file.readJSON(filepath);
     var transifex = specToTransifex(spec);
