@@ -1,16 +1,12 @@
 {
   "name": "weblit-keys",
-  "version": "0.0.0",
+  "version": "1.0.2",
   "homepage": "https://github.com/k88hudson/weblit-keys",
   "authors": [
     "Kate Hudson <k88hudson@gmail.com>"
   ],
   "license": "MIT",
   "devDependencies": {
-    "MakeAPI-Gallery": "https://github.com/mozilla/MakeAPI-Gallery.git#~0.0.2",
     "qunit": "~1.14.0"
-  },
-  "dependencies": {
-    "weblit-keys": "https://github.com/mozilla/web-literacy-client.git"
   }
 }
