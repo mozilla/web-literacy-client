@@ -11,8 +11,7 @@ module.exports = function(grunt) {
   var JS_FILENAME = 'web-literacy-client.js'
 
   // Transifex
-  // TODO: add correct locales
-  var TRANSIFEX_APP = 'webmaker';
+  var TRANSIFEX_APP = 'webliteracymap';
 
   // For JS processing
   var FUNCTION_NAME = 'WebLiteracyClient';
@@ -88,6 +87,6 @@ module.exports = function(grunt) {
 
   // MAIN GRUNT TASKS
   grunt.registerTask('generate', ['clean:dist', 'convert']);
-  grunt.registerTask('build', ['concat:basic']);
-  // grunt.registerTask('build', ['clean:locales', 'transifex', 'concat:basic', 'concat:withLocales']);
+  // grunt.registerTask('build', ['concat:basic']);
+  grunt.registerTask('build', ['clean:locales', 'transifex', 'concat:basic', 'concat:withLocales']);
 };

@@ -5,6 +5,7 @@ function specToTransifex(json) {
   var output = {};
   // Title
   output[json.titleKey] = json.title;
+  output[json.versionKey] = json.version;
 
   json.literacies.forEach(function(item) {
     // Check duplicate keys
@@ -31,7 +32,7 @@ module.exports = function(grunt) {
         var transifex = specToTransifex(spec);
 
         // Write transifex file
-        var transifexFileName = path.basename(filepath, '.json') + '_strings.' + spec.version + '.json';
+        var transifexFileName = path.basename(filepath);
         grunt.file.write(file.dest + transifexFileName, JSON.stringify(transifex, null, '  '));
         grunt.log.writeln('File "' + file.dest + transifexFileName + '" created.');
       });
