@@ -1,6 +1,6 @@
 {
   "name": "web-literacy-client",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/web-literacy-client.with-langs.js",
   "repository": {
