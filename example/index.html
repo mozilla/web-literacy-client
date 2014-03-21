@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en_US" dir="ltr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Web literacy tags</title>
+  <link href="https://s3-us-west-2.amazonaws.com/makerstrap/makerstrap.complete.min.css" rel="stylesheet">
+  <link href="make-gallery.css" rel="stylesheet">
+<style>
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+
+.tag-input-wrapper {
+  float: left;
+  width: 250px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.auto-tag {
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+#tag .btn {
+  transition: all 0.1s ease-in;
+  position: relative;
+}
+#tag .btn:hover {
+  color: rgba(255, 255, 255, 0.3);
+}
+#tag .btn:hover .fa-times {
+  opacity: 1;
+}
+.fa-times {
+  color: #FFF;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  font-size: 10px;
+}
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <h2 class="text-center page-header">Web Literacy Standard (1.0.0) Localized tags demo</h2>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>
+          <select id="language" class="form-control">
+          </select>
+        </p>
+        <div class="tags-wrapper">
+          <span id="tag"></span>
+          <div class="tag-input-wrapper">
+            <div class="input-group">
+              <input class="form-control" id="tagger">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="gallery"></div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="autocomplete.js"></script>
+  <script src="../dist/web-literacy-client.with-langs.js"></script>
+  <script src="make-api.js"></script>
+  <script src="make-gallery.js"></script>
+  <script>
+      var wlc = new WebLiteracyClient();
+
+      // Suggestions
+      var suggestions = [];
+      function setSuggestions(lang) {
+        wlc.lang(lang);
+        suggestions = wlc.all().map(function(item) {
+          return {
+            value: item.term,
+            data: item
+          };
+        });
+        $('#tag .btn').each(function(i, el) {
+          $(el).html(wlc.term(el.getAttribute('data-tag')));
+        });
+        $('#tagger').autocomplete().setOptions({
+          lookup: suggestions
+        });
+      }
+
+      $('#tagger').autocomplete({
+        lookup: suggestions,
+        onSelect: function(suggestion) {
+          $('#tag')
+            .append('<a class="btn btn-primary auto-tag" data-tag="' + suggestion.data.tag + '">' + suggestion.value + '<span class="fa fa-times"></span></a>');
+          $('#tagger').val('');
+          selectedTags.push(suggestion.data.tag);
+          makeGallery();
+        }
+      });
+
+      //Selects
+      // wlc.supportedLangs()
+      ['en', 'fr', 'zh_CN'].forEach(function(lang) {
+        $('#language').append('<option value="' + lang +'">' + lang +'</option>');
+      });
+
+      $('#language').change(function() {
+        setSuggestions(this.value);
+      });
+
+      $('#language').val('en');
+      setSuggestions('en');
+
+      var selectedTags = [];
+
+      function makeGallery() {
+        new MakeGallery({
+          limit: 20,
+          sortByField: 'likes',
+          tags: [
+            {
+              tags: selectedTags
+            }
+          ]
+        }, {
+          apiURL: 'https://makeapi.webmaker.org',
+          elementSelector: '#gallery'
+        });
+      }
+
+      $('#tag').on('click', '.btn', function() {
+        var tag = this.getAttribute('data-tag');
+        selectedTags = $.grep(selectedTags, function(item) {
+          return item !== tag;
+        });
+        $(this).remove();
+        makeGallery();
+      });
+
+  </script>
+</body>
+</html>
