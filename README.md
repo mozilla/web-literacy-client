@@ -32,6 +32,8 @@ bower install web-literacy-client
 var wlc = new WebLiteracyClient();
 wlc.lang = 'fr';
 wlc.all();
+wlc.term(someTag);
+wlc.description(someTag);
 ```
 
 ### Using the web literacy client in node
@@ -42,7 +44,14 @@ var WebLiteracyClient = require('web-literacy-client');
 var wlc = new WebLiteracyClient();
 wlc.lang = 'fr';
 wlc.all();
+wlc.term(someTag);
+wlc.description(someTag);
 ```
 
+### Tests and Examples
+
+`bower install` to install quint and example dependencies.
+See `tests/` to run unit tests.
+See `examples/` for a node and browser example.
 
 
