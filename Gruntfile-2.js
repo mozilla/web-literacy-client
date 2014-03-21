@@ -1,18 +1,20 @@
 module.exports = function(grunt) {
 
+  // Directories
   var ARCHIVE_DIR = 'archive/';
   var LOCALE_DIR = 'locale/';
   var SRC_DIR = 'src/';
   var DIST_DIR = 'dist/';
 
+  // File names
+  var TEMPLATE_FILENAME = 'weblitmap.json';
+  var JS_FILENAME = 'web-literacy-client.js'
+
   grunt.initConfig({
     clean: [ DIST_DIR, LOCALE_DIR ],
     convert: {
-      options: [
-        archiveDir: ARCHIVE_DIR
-      ],
       strings: {
-        src: SRC_DIR + 'weblitmap.json',
+        src: SRC_DIR + TEMPLATE_FILENAME,
         dest: DIST_DIR
       }
     },
@@ -22,28 +24,31 @@ module.exports = function(grunt) {
         footer: grunt.file.read('./grunt/umd.footer.js'),
         process: function(src, filepath) {
 
-          // Format the template
-          if (filepath.match(BASE_FILENAME)) {
+          // Template file (weblitmap.json)
+          if (filepath.match(SRC_DIR + TEMPLATE_FILENAME)) {
             var json = JSON.parse(src);
             return FUNCTION_NAME + '.prototype.template = ' + JSON.stringify(json.literacies, null, '  ') + ';';
 
-          // Format each locale file
-          } else if (filepath.match(STRINGS_FOLDER)) {
+          // Downloaded locales
+          } else if (filepath.match(LOCALE_DIR)) {
             var lang = filepath.replace(STRINGS_FOLDER, '').split('/')[0];
             return FUNCTION_NAME + '.prototype.langs["'+ lang +'"] = ' + src + ';';
 
-          // Return as is
+          // Other
           } else {
             return src;
           }
         }
       },
       dist: {
-        src: ['src/web-literacy-client.js', BASE_FILENAME, STRINGS_FOLDER + '**/*.json'],
-        dest: 'dist/web-literacy-client.with-langs.js',
+        src: [SRC_DIR + JS_FILENAME, SRC_DIR + TEMPLATE_FILENAME, LOCALE_DIR + '**/*.json'],
+        dest: DIST_DIR + 'web-literacy-client.with-langs.js',
       }
     }
   });
+
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
   grunt.registerTask('convert', 'Convert map to locale files', require('./grunt/convert-task.js');
 
