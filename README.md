@@ -30,7 +30,7 @@ TODO: Including `locale/` json files
 ```
 bower install web-literacy-client
 var wlc = new WebLiteracyClient();
-wlc.lang = 'fr';
+wlc.lang('fr');
 wlc.all();
 wlc.term(someTag);
 wlc.description(someTag);
@@ -42,7 +42,7 @@ wlc.description(someTag);
 npm install web-literacy-client
 var WebLiteracyClient = require('web-literacy-client');
 var wlc = new WebLiteracyClient();
-wlc.lang = 'fr';
+wlc.lang('fr');
 wlc.all();
 wlc.term(someTag);
 wlc.description(someTag);
