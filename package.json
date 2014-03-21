@@ -1,21 +1,18 @@
 {
-  "name": "weblit-keys",
+  "name": "web-literacy-client",
   "version": "0.0.0",
   "description": "",
-  "main": "Gruntfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "dist/web-literacy-client.with-langs.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/k88hudson/weblit-keys.git"
+    "url": "git://github.com/mozilla/weblit-keys.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/k88hudson/weblit-keys/issues"
+    "url": "https://github.com/mozilla/weblit-keys/issues"
   },
-  "homepage": "https://github.com/k88hudson/weblit-keys",
+  "homepage": "https://github.com/mozilla/weblit-keys",
   "devDependencies": {
     "grunt": "~0.4.4",
     "grunt-contrib-concat": "~0.3.0",

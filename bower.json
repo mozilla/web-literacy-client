@@ -9,5 +9,8 @@
   "devDependencies": {
     "MakeAPI-Gallery": "https://github.com/mozilla/MakeAPI-Gallery.git#~0.0.2",
     "qunit": "~1.14.0"
+  },
+  "dependencies": {
+    "weblit-keys": "https://github.com/mozilla/web-literacy-client.git"
   }
 }

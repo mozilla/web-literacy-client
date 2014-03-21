@@ -121,14 +121,14 @@
       setSuggestions('en');
 
       function makeGallery() {
+        console.log(selectedTags);
         new MakeGallery({
           limit: 20,
           sortByField: 'likes',
-          tags: [
-            {
-              tags: selectedTags
-            }
-          ]
+          or: true,
+          tags: {
+            tags: selectedTags
+          }
         }, {
           apiURL: 'https://makeapi.webmaker.org',
           elementSelector: '#gallery'
