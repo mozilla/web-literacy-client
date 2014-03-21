@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Web literacy tags</title>
   <link href="https://s3-us-west-2.amazonaws.com/makerstrap/makerstrap.complete.min.css" rel="stylesheet">
+  <link href="../bower_components/MakeAPI-Gallery/css/make-gallery.css" rel="stylesheet">
 <style>
 
 .autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
@@ -22,6 +23,25 @@
   float: left;
   margin-right: 5px;
   margin-bottom: 5px;
+}
+#tag .btn {
+  transition: all 0.1s ease-in;
+  position: relative;
+}
+#tag .btn:hover {
+  color: rgba(255, 255, 255, 0.3);
+}
+#tag .btn:hover .fa-times {
+  opacity: 1;
+}
+.fa-times {
+  color: #FFF;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  font-size: 10px;
 }
 </style>
 
@@ -42,71 +62,70 @@
           <div class="tag-input-wrapper">
             <div class="input-group">
               <input class="form-control" id="tagger">
-             <!--  <div class="input-group-btn">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div> -->
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div id="gallery"></div>
   </div>
 
 
   <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
   <script src="autocomplete.js"></script>
+  <script src="../dist/web-literacy-client.js"></script>
+  <script src="../bower_components/makeapi-client/src/make-api.js"></script>
+  <script src="../bower_components/MakeAPI-Gallery/js/make-gallery.js"></script>
   <script>
-      var suggestions = [];
-      var strings = {};
+      var wlc = new WebLiteracyClient();
+
+      var suggestions = wlc.all().map(function(item) {
+        return {
+          value: item.term,
+          data: item
+        };
+      });
+
+      var selectedTags = [];
+
+      function makeGallery() {
+        console.log(selectedTags);
+        MakeGallery({
+          tags: selectedTags
+        }, {
+          apiURL: 'https://makeapi.webmaker.org',
+          elementSelector: '#gallery'
+        });
+      }
+
+      $('#tag').on('click', '.btn', function() {
+        var tag = this.getAttribute('data-tag');
+        selectedTags = $.grep(selectedTags, function(item) {
+          return item !== tag;
+        });
+        $(this).remove();
+        makeGallery();
+      });
 
       $('#tagger').autocomplete({
         lookup: suggestions,
         onSelect: function(suggestion) {
-          $('#tag').append('<a class="btn btn-primary auto-tag" data-tag="' + suggestion.data.tags[0] + '">' + suggestion.value + '</a>');
+          $('#tag')
+            .append('<a class="btn btn-primary auto-tag" data-tag="' + suggestion.data.tag + '">' + suggestion.value + '<span class="fa fa-times"></span></a>');
           $('#tagger').val('');
-          suggestions = $.grep(suggestions, function(item) {
-            return item.value !== suggestion.value;
-          });
-          $('#tagger').autocomplete().setOptions({
-            lookup: suggestions
-          });
+          selectedTags.push(suggestion.data.tag);
+          makeGallery();
+
+          // suggestions = $.grep(suggestions, function(item) {
+          //   return item.value !== suggestion.value;
+          // });
+          // $('#tagger').autocomplete().setOptions({
+          //   lookup: suggestions
+          // });
         }
       });
 
-      function loadJSON(e) {
-
-        $.getJSON('../lastest/weblitmap.json', function(data) {
-          strings = {};
-          suggestions = data.map(function(item, i) {
-            item.tags.forEach(function(tag) {
-              strings[tag] = item.term;
-            });
-            return {
-              value: item.term,
-              data: item
-            };
-          });
-
-          $('#tag .auto-tag').each(function(i, el) {
-            $(el).html(strings[el.getAttribute('data-tag')]);
-          });
-
-          $('#tagger').autocomplete().setOptions({
-            lookup: suggestions
-          });
-        });
-      }
-
-      loadJSON();
-
-      $('#language').change(loadJSON);
+      // $('#language').change(loadJSON);
 
 
   </script>

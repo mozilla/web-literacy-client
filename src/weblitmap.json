@@ -55,7 +55,7 @@
     {
         "term": "Coding/Scripting",
         "description": "Creating interactive experiences on the Web",
-        "tag": "weblitCodingScripting",
+        "tag": "weblit-CodingScripting",
         "deprecates": []
     },
     {

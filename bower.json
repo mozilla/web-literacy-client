@@ -5,5 +5,8 @@
   "authors": [
     "Kate Hudson <k88hudson@gmail.com>"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "MakeAPI-Gallery": "https://github.com/mozilla/MakeAPI-Gallery.git#~0.0.2"
+  }
 }
