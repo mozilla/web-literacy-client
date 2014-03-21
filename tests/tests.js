@@ -28,8 +28,22 @@ test('Set options works', function() {
 test('Set lang works', function() {
   var wlc = new WebLiteracyClient();
   ok(wlc.strings);
-  wlc.lang('not-real-lang')
-  ok(!wlc.strings);
+  wlc.lang('en')
+  ok(wlc.strings);
+  // TODO: test when languages are not supported
+});
+
+test('supportedLangs works and contains en', function() {
+  var wlc = new WebLiteracyClient();
+  var langlist = wlc.supportedLangs();
+
+  for (var i = 0; i < langlist.length; i++) {
+    if (langlist[i] === 'en') {
+      return ok(true);
+    }
+  }
+  throws('en not found in supportedLangs');
+
 });
 
 test('Get term works', function() {

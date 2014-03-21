@@ -6,14 +6,26 @@ function WebLiteracyClient(options) {
 
   // Options
   self.options = options = options || {};
-  options.descriptionSuffix = options.descriptionSuffix || '_desc';
+  self.options.descriptionSuffix = options.descriptionSuffix || '_desc';
+
+  // Get supported languages
+  self.supportedLangs = function() {
+    var keys = [];
+    for (var lang in self.langs) {
+      keys.push(lang);
+    }
+    return keys;
+  };
 
   // Set language to English be default
   self.strings = self.langs.en;
 
   // Allow users to set language
   self.lang = function(l) {
-    if (l) {
+    if (l && !self.supportedLangs()[l]) {
+      return console.error('Sorry, ' + l + 'is not a supported language in this release.');
+    }
+    else if (l) {
       self.strings = self.langs[l];
     }
     return self.strings;
