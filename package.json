@@ -3,16 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/web-literacy-client.with-langs.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/mozilla/weblit-keys.git"
-  },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mozilla/weblit-keys/issues"
+    "url": "https://github.com/mozilla/web-literacy-client/issues"
   },
-  "homepage": "https://github.com/mozilla/weblit-keys",
+  "homepage": "https://github.com/mozilla/web-literacy-client",
   "devDependencies": {
     "grunt": "~0.4.4",
     "grunt-contrib-concat": "~0.3.0",
