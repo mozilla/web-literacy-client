@@ -56,7 +56,7 @@ module.exports = function(grunt) {
         }
       },
       withLocales: {
-        src: [SRC_DIR + JS_FILENAME, SRC_DIR + TEMPLATE_FILENAME, DIST_DIR + '*.json', LOCALE_DIR + '**/*.json'],
+        src: [SRC_DIR + JS_FILENAME, SRC_DIR + TEMPLATE_FILENAME, DIST_DIR + '*.json', LOCALE_DIR + '**/weblitmap.json'],
         dest: DIST_DIR + JS_FILENAME_WITH_LANGS,
         options: {
           process: function(src, filepath) {
