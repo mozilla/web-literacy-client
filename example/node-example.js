@@ -1,4 +1,5 @@
-var webLiteracyClient = require('../dist/web-literacy-client.with-langs');
+var webLiteracyClient = require('../dist/web-literacy-client');
 
 var w = new webLiteracyClient();
-console.log(w.all());
+
+console.log(w.term('weblit-WebMechanics'));
