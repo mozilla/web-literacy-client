@@ -24,13 +24,17 @@ function specToTransifex(json) {
 }
 
 module.exports = function(grunt) {
-  this.files.forEach(function(filepath) {
-    var spec = grunt.file.readJSON(filepath);
-    var transifex = specToTransifex(spec);
+  return function() {
+    this.files.forEach(function(file) {
+      file.src.forEach(function(filepath) {
+        var spec = grunt.file.readJSON(filepath);
+        var transifex = specToTransifex(spec);
 
-    // Write transifex file
-    var transifexFileName = path.basename(filepath, '.json') + '_strings.json';
-    grunt.file.write(file.dest + transifexFileName, JSON.stringify(transifex, null, '  '));
-    grunt.log.writeln('File "' + file.dest + transifexFileName + '" created.');
-  });
+        // Write transifex file
+        var transifexFileName = path.basename(filepath, '.json') + '_strings.' + spec.version + '.json';
+        grunt.file.write(file.dest + transifexFileName, JSON.stringify(transifex, null, '  '));
+        grunt.log.writeln('File "' + file.dest + transifexFileName + '" created.');
+      });
+    });
+  };
 };

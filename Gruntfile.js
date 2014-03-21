@@ -10,6 +10,13 @@ module.exports = function(grunt) {
   var TEMPLATE_FILENAME = 'weblitmap.json';
   var JS_FILENAME = 'web-literacy-client.js'
 
+  // Transifex
+  // TODO: add correct locales
+  var TRANSIFEX_APP = 'webmaker';
+
+  // For JS processing
+  var FUNCTION_NAME = 'WebLiteracyClient';
+
   grunt.initConfig({
     clean: [ DIST_DIR, LOCALE_DIR ],
     convert: {
@@ -24,6 +31,7 @@ module.exports = function(grunt) {
         footer: grunt.file.read('./grunt/umd.footer.js'),
         process: function(src, filepath) {
 
+
           // Template file (weblitmap.json)
           if (filepath.match(SRC_DIR + TEMPLATE_FILENAME)) {
             var json = JSON.parse(src);
@@ -31,7 +39,7 @@ module.exports = function(grunt) {
 
           // Downloaded locales
           } else if (filepath.match(LOCALE_DIR)) {
-            var lang = filepath.replace(STRINGS_FOLDER, '').split('/')[0];
+            var lang = filepath.split('/').splice(-2, 1);
             return FUNCTION_NAME + '.prototype.langs["'+ lang +'"] = ' + src + ';';
 
           // Other
@@ -44,18 +52,13 @@ module.exports = function(grunt) {
         src: [SRC_DIR + JS_FILENAME, SRC_DIR + TEMPLATE_FILENAME, LOCALE_DIR + '**/*.json'],
         dest: DIST_DIR + 'web-literacy-client.with-langs.js',
       }
-    },
-    transifex: {
-      options: {
-        dir: LOCALE_DIR
-      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.registerMultiTask('convert', 'Convert map to locale files', require('./grunt/convert-task.js'));
-  grunt.registerMultiTask('transifex', 'Download files from transifex', require('./grunt/transifex-task.js'));
+  grunt.registerMultiTask('convert', 'Convert map to locale files', require('./grunt/convert-task.js')(grunt));
+  grunt.registerTask('transifex', 'Download files from transifex', require('./grunt/transifex-task.js')(grunt, TRANSIFEX_APP, LOCALE_DIR));
 
   // MAIN GRUNT TASKS
   grunt.registerTask('generate', ['clean', 'convert']);
