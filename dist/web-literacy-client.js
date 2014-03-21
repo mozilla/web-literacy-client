@@ -20,7 +20,7 @@ function WebLiteracyClient(options) {
   var self = this;
 
   // Options
-  options = options || {};
+  self.options = options = options || {};
   options.descriptionSuffix = options.descriptionSuffix || '_desc';
 
   // Set language to English be default
@@ -108,7 +108,7 @@ WebLiteracyClient.prototype.template = [
   {
     "term": "Coding/Scripting",
     "description": "Creating interactive experiences on the Web",
-    "tag": "weblitCodingScripting",
+    "tag": "weblit-CodingScripting",
     "deprecates": []
   },
   {
