@@ -2,30 +2,30 @@
   "title": "Web Literacy Map",
   "titleKey": "WBLIT-MAP",
   "versionKey": "WBLIT-VERSION",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "descriptionSuffix": "_desc",
   "literacies": [
     {
         "term": "Navigation",
-        "description": "Using software tools to browse the Web",
+        "description": "Using software tools to browse the web",
         "tag": "weblit-Navigation",
         "deprecates": []
     },
     {
         "term": "Web Mechanics",
-        "description": "Understanding the Web ecosystem",
+        "description": "Understanding the web ecosystem",
         "tag": "weblit-WebMechanics",
         "deprecates": []
     },
     {
         "term": "Search",
-        "description": "Locating information, people and resources via the Web",
+        "description": "Locating information, people and resources via the web",
         "tag": "weblit-Search",
         "deprecates": []
     },
     {
         "term": "Credibility",
-        "description": "Critically evaluating information found on the Web",
+        "description": "Critically evaluating information found on the web",
         "tag": "weblit-Credibility",
         "deprecates": []
     },
@@ -36,26 +36,26 @@
         "deprecates": []
     },
     {
-        "term": "Composing for the Web",
-        "description": "Creating and curating content for the Web",
+        "term": "Composing for the web",
+        "description": "Creating and curating content for the web",
         "tag": "weblit-Composing",
         "deprecates": []
     },
     {
         "term": "Remixing",
-        "description": "Modifying existing Web resources to create something new",
+        "description": "Modifying existing web resources to create something new",
         "tag": "weblit-Remix",
         "deprecates": []
     },
     {
         "term": "Design and Accessibility",
-        "description": "Creating universally effective communications through Web resources",
+        "description": "Creating universally effective communications through web resources",
         "tag": "weblit-DesignAccessibility",
         "deprecates": []
     },
     {
-        "term": "Coding/Scripting",
-        "description": "Creating interactive experiences on the Web",
+        "term": "Coding/scripting",
+        "description": "Creating interactive experiences on the web",
         "tag": "weblit-CodingScripting",
         "deprecates": []
     },
@@ -66,14 +66,14 @@
         "deprecates": []
     },
     {
-        "term": "Sharing",
-        "description": "Providing access to Web resources",
-        "tag": "weblit-Sharing",
-        "deprecates": ["weblit-SharingCollaborating"]
+        "term": "Sharing and Collaborating",
+        "description": "Jointly creating and providing access to web resources",
+        "tag": "weblit-SharingCollaborating",
+        "deprecates": []
     },
     {
         "term": "Collaborating",
-        "description": "Creating Web resources with others",
+        "description": "Creating web resources with others",
         "tag": "weblit-Collaborating",
         "deprecates": []
     },
