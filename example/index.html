@@ -79,6 +79,7 @@
 
       // Suggestions
       var suggestions = [];
+      var selectedTags = [];
       function setSuggestions(lang) {
         wlc.lang(lang);
         suggestions = wlc.all().map(function(item) {
@@ -118,8 +119,6 @@
 
       $('#language').val('en');
       setSuggestions('en');
-
-      var selectedTags = [];
 
       function makeGallery() {
         new MakeGallery({
