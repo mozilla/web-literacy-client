@@ -18,7 +18,10 @@ module.exports = function(grunt) {
   var FUNCTION_NAME = 'WebLiteracyClient';
 
   grunt.initConfig({
-    clean: [ DIST_DIR, LOCALE_DIR ],
+    clean: {
+      locales: [ LOCALE_DIR ],
+      dist: [ DIST_DIR]
+    },
     convert: {
       dist: {
         src: SRC_DIR + TEMPLATE_FILENAME,
@@ -28,29 +31,52 @@ module.exports = function(grunt) {
     concat: {
       options: {
         banner: grunt.file.read('./grunt/umd.header.js'),
-        footer: grunt.file.read('./grunt/umd.footer.js'),
-        process: function(src, filepath) {
+        footer: grunt.file.read('./grunt/umd.footer.js')
+      },
+      basic: {
+        src: [SRC_DIR + JS_FILENAME, SRC_DIR + TEMPLATE_FILENAME, DIST_DIR + '*.json'],
+        dest: DIST_DIR + JS_FILENAME,
+        options: {
+          process: function(src, filepath) {
 
+            // Template file (weblitmap.json)
+            if (filepath.match(SRC_DIR + TEMPLATE_FILENAME)) {
+              var json = JSON.parse(src);
+              return FUNCTION_NAME + '.prototype.template = ' + JSON.stringify(json.literacies, null, '  ') + ';';
 
-          // Template file (weblitmap.json)
-          if (filepath.match(SRC_DIR + TEMPLATE_FILENAME)) {
-            var json = JSON.parse(src);
-            return FUNCTION_NAME + '.prototype.template = ' + JSON.stringify(json.literacies, null, '  ') + ';';
+            // English strings
+            } else if (filepath.match(DIST_DIR)) {
+              return FUNCTION_NAME + '.prototype.langs["en"] = ' + src + ';';
 
-          // Downloaded locales
-          } else if (filepath.match(LOCALE_DIR)) {
-            var lang = filepath.split('/').splice(-2, 1);
-            return FUNCTION_NAME + '.prototype.langs["'+ lang +'"] = ' + src + ';';
-
-          // Other
-          } else {
-            return src;
+            // Other
+            } else {
+              return src;
+            }
           }
         }
       },
-      dist: {
+      withLocales: {
         src: [SRC_DIR + JS_FILENAME, SRC_DIR + TEMPLATE_FILENAME, LOCALE_DIR + '**/*.json'],
-        dest: DIST_DIR + 'web-literacy-client.with-langs.js',
+        dest: DIST_DIR + JS_FILENAME + '.with-langs.js',
+        options: {
+          process: function(src, filepath) {
+
+            // Template file (weblitmap.json)
+            if (filepath.match(SRC_DIR + TEMPLATE_FILENAME)) {
+              var json = JSON.parse(src);
+              return FUNCTION_NAME + '.prototype.template = ' + JSON.stringify(json.literacies, null, '  ') + ';';
+
+            // Downloaded locales
+            } else if (filepath.match(LOCALE_DIR)) {
+              var lang = filepath.split('/').splice(-2, 1);
+              return FUNCTION_NAME + '.prototype.langs["'+ lang +'"] = ' + src + ';';
+
+            // Other
+            } else {
+              return src;
+            }
+          }
+        }
       }
     }
   });
@@ -61,7 +87,7 @@ module.exports = function(grunt) {
   grunt.registerTask('transifex', 'Download files from transifex', require('./grunt/transifex-task.js')(grunt, TRANSIFEX_APP, LOCALE_DIR));
 
   // MAIN GRUNT TASKS
-  grunt.registerTask('generate', ['clean', 'convert']);
-  grunt.registerTask('build', ['clean', 'transifex', 'concat']);
-
+  grunt.registerTask('generate', ['clean:dist', 'convert']);
+  grunt.registerTask('build', ['concat:basic']);
+  // grunt.registerTask('build', ['clean:locales', 'transifex', 'concat:basic', 'concat:withLocales']);
 };
