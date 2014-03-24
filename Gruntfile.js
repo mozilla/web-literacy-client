@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 
   // Transifex
   var TRANSIFEX_APP = 'webliteracymap';
-  var SUPPORTED_LANGS = [ 'en_US', 'fr', 'zh_TW', 'th_TH', 'pt_BR', 'id', 'nl', 'km', 'en_CA', 'en_GB'];
+  var SUPPORTED_LANGS = [ 'en-US', 'fr', 'zh-TW', 'th-TH', 'pt-BR', 'id', 'nl', 'km', 'en-CA', 'en-GB'];
 
   // For JS processing
   var FUNCTION_NAME = 'WebLiteracyClient';
