@@ -226,75 +226,41 @@ WebLiteracyClient.prototype.langs["en"] = {
 
 
 
+WebLiteracyClient.prototype.langs["en-CA"] = {
+    "WBLIT-MAP": "Web Literacy Map",
+    "WBLIT-VERSION": "1.0.0",
+    "weblit-Navigation": "Navigation",
+    "weblit-Navigation_desc": "Using software tools to browse the web",
+    "weblit-WebMechanics": "Web Mechanics",
+    "weblit-WebMechanics_desc": "Understanding the web ecosystem",
+    "weblit-Search": "Search",
+    "weblit-Search_desc": "Locating information, people and resources via the web",
+    "weblit-Credibility": "Credibility",
+    "weblit-Credibility_desc": "Critically evaluating information found on the web",
+    "weblit-Security": "Security",
+    "weblit-Security_desc": "Keeping systems, identities, and content safe",
+    "weblit-Composing": "Composing for the web",
+    "weblit-Composing_desc": "Creating and curating content for the web",
+    "weblit-Remix": "Remixing",
+    "weblit-Remix_desc": "Modifying existing web resources to create something new",
+    "weblit-DesignAccessibility": "Design and Accessibility",
+    "weblit-DesignAccessibility_desc": "Creating universally effective communications through web resources",
+    "weblit-CodingScripting": "Coding/scripting",
+    "weblit-CodingScripting_desc": "Creating interactive experiences on the web",
+    "weblit-Infrastructure": "Infrastructure",
+    "weblit-Infrastructure_desc": "Understanding the Internet stack",
+    "weblit-SharingCollaborating": "Sharing and Collaborating",
+    "weblit-SharingCollaborating_desc": "Jointly creating and providing access to web resources",
+    "weblit-Collaborating": "Collaborating",
+    "weblit-Collaborating_desc": "Creating web resources with others",
+    "weblit-Community": "Community Participation",
+    "weblit-Community_desc": "Getting involved in web communities and understanding their practices",
+    "weblit-Privacy": "Privacy",
+    "weblit-Privacy_desc": "Examining the consequences of sharing data online",
+    "weblit-OpenPractices": "Open Practices",
+    "weblit-OpenPractices_desc": "Helping to keep the Web democratic and universally accessible"
+};
 
-WebLiteracyClient.prototype.langs["en_CA"] = {
-    "WBLIT-MAP": "Web Literacy Map",
-    "WBLIT-VERSION": "1.0.0",
-    "weblit-Navigation": "Navigation",
-    "weblit-Navigation_desc": "Using software tools to browse the web",
-    "weblit-WebMechanics": "Web Mechanics",
-    "weblit-WebMechanics_desc": "Understanding the web ecosystem",
-    "weblit-Search": "Search",
-    "weblit-Search_desc": "Locating information, people and resources via the web",
-    "weblit-Credibility": "Credibility",
-    "weblit-Credibility_desc": "Critically evaluating information found on the web",
-    "weblit-Security": "Security",
-    "weblit-Security_desc": "Keeping systems, identities, and content safe",
-    "weblit-Composing": "Composing for the web",
-    "weblit-Composing_desc": "Creating and curating content for the web",
-    "weblit-Remix": "Remixing",
-    "weblit-Remix_desc": "Modifying existing web resources to create something new",
-    "weblit-DesignAccessibility": "Design and Accessibility",
-    "weblit-DesignAccessibility_desc": "Creating universally effective communications through web resources",
-    "weblit-CodingScripting": "Coding/scripting",
-    "weblit-CodingScripting_desc": "Creating interactive experiences on the web",
-    "weblit-Infrastructure": "Infrastructure",
-    "weblit-Infrastructure_desc": "Understanding the Internet stack",
-    "weblit-SharingCollaborating": "Sharing and Collaborating",
-    "weblit-SharingCollaborating_desc": "Jointly creating and providing access to web resources",
-    "weblit-Collaborating": "Collaborating",
-    "weblit-Collaborating_desc": "Creating web resources with others",
-    "weblit-Community": "Community Participation",
-    "weblit-Community_desc": "Getting involved in web communities and understanding their practices",
-    "weblit-Privacy": "Privacy",
-    "weblit-Privacy_desc": "Examining the consequences of sharing data online",
-    "weblit-OpenPractices": "Open Practices",
-    "weblit-OpenPractices_desc": "Helping to keep the Web democratic and universally accessible"
-};
-WebLiteracyClient.prototype.langs["en_GB"] = {
-    "WBLIT-MAP": "Web Literacy Map",
-    "WBLIT-VERSION": "1.0.0",
-    "weblit-Navigation": "Navigation",
-    "weblit-Navigation_desc": "Using software tools to browse the web",
-    "weblit-WebMechanics": "Web Mechanics",
-    "weblit-WebMechanics_desc": "Understanding the web ecosystem",
-    "weblit-Search": "Search",
-    "weblit-Search_desc": "Locating information, people and resources via the web",
-    "weblit-Credibility": "Credibility",
-    "weblit-Credibility_desc": "Critically evaluating information found on the web",
-    "weblit-Security": "Security",
-    "weblit-Security_desc": "Keeping systems, identities, and content safe",
-    "weblit-Composing": "Composing for the web",
-    "weblit-Composing_desc": "Creating and curating content for the web",
-    "weblit-Remix": "Remixing",
-    "weblit-Remix_desc": "Modifying existing web resources to create something new",
-    "weblit-DesignAccessibility": "Design and Accessibility",
-    "weblit-DesignAccessibility_desc": "Creating universally effective communications through web resources",
-    "weblit-CodingScripting": "Coding/scripting",
-    "weblit-CodingScripting_desc": "Creating interactive experiences on the web",
-    "weblit-Infrastructure": "Infrastructure",
-    "weblit-Infrastructure_desc": "Understanding the Internet stack",
-    "weblit-SharingCollaborating": "Sharing and Collaborating",
-    "weblit-SharingCollaborating_desc": "Jointly creating and providing access to web resources",
-    "weblit-Collaborating": "Collaborating",
-    "weblit-Collaborating_desc": "Creating web resources with others",
-    "weblit-Community": "Community Participation",
-    "weblit-Community_desc": "Getting involved in web communities and understanding their practices",
-    "weblit-Privacy": "Privacy",
-    "weblit-Privacy_desc": "Examining the consequences of sharing data online",
-    "weblit-OpenPractices": "Open Practices",
-    "weblit-OpenPractices_desc": "Helping to keep the Web democratic and universally accessible"
-};
 
 
 
@@ -477,7 +443,7 @@ WebLiteracyClient.prototype.langs["nl"] = {
 
 
 
-WebLiteracyClient.prototype.langs["pt_BR"] = {
+WebLiteracyClient.prototype.langs["pt-BR"] = {
     "WBLIT-MAP": "Padrão de Alfabetização para a Web",
     "WBLIT-VERSION": "1.0.0",
     "weblit-Navigation": "Navegação",
@@ -523,7 +489,7 @@ WebLiteracyClient.prototype.langs["pt_BR"] = {
 
 
 
-WebLiteracyClient.prototype.langs["th_TH"] = {
+WebLiteracyClient.prototype.langs["th-TH"] = {
     "WBLIT-MAP": "แผนที่ความรู้เว็บ",
     "WBLIT-VERSION": "1.0.0",
     "weblit-Navigation": "การนำทาง",
@@ -567,7 +533,7 @@ WebLiteracyClient.prototype.langs["th_TH"] = {
 
 
 
-WebLiteracyClient.prototype.langs["zh_TW"] = {
+WebLiteracyClient.prototype.langs["zh-TW"] = {
     "WBLIT-MAP": "Web 素養一覽",
     "WBLIT-VERSION": "1.0.0",
     "weblit-Navigation": "瀏覽",
