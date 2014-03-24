@@ -69,7 +69,9 @@ function WebLiteracyClient(options) {
     return self.template.map(function(item) {
       return {
         term: self.strings[item.tag] || self.langs[DEFAULT_LANG][item.tag],
-        tag: item.tag
+        tag: item.tag,
+        color: item.color,
+        description: item.description
       };
     });
   };
@@ -260,7 +262,40 @@ WebLiteracyClient.prototype.langs["en-CA"] = {
     "weblit-OpenPractices": "Open Practices",
     "weblit-OpenPractices_desc": "Helping to keep the Web democratic and universally accessible"
 };
-
+WebLiteracyClient.prototype.langs["en-GB"] = {
+    "WBLIT-MAP": "Web Literacy Map",
+    "WBLIT-VERSION": "1.0.0",
+    "weblit-Navigation": "Navigation",
+    "weblit-Navigation_desc": "Using software tools to browse the web",
+    "weblit-WebMechanics": "Web Mechanics",
+    "weblit-WebMechanics_desc": "Understanding the web ecosystem",
+    "weblit-Search": "Search",
+    "weblit-Search_desc": "Locating information, people and resources via the web",
+    "weblit-Credibility": "Credibility",
+    "weblit-Credibility_desc": "Critically evaluating information found on the web",
+    "weblit-Security": "Security",
+    "weblit-Security_desc": "Keeping systems, identities, and content safe",
+    "weblit-Composing": "Composing for the web",
+    "weblit-Composing_desc": "Creating and curating content for the web",
+    "weblit-Remix": "Remixing",
+    "weblit-Remix_desc": "Modifying existing web resources to create something new",
+    "weblit-DesignAccessibility": "Design and Accessibility",
+    "weblit-DesignAccessibility_desc": "Creating universally effective communications through web resources",
+    "weblit-CodingScripting": "Coding/scripting",
+    "weblit-CodingScripting_desc": "Creating interactive experiences on the web",
+    "weblit-Infrastructure": "Infrastructure",
+    "weblit-Infrastructure_desc": "Understanding the Internet stack",
+    "weblit-SharingCollaborating": "Sharing and Collaborating",
+    "weblit-SharingCollaborating_desc": "Jointly creating and providing access to web resources",
+    "weblit-Collaborating": "Collaborating",
+    "weblit-Collaborating_desc": "Creating web resources with others",
+    "weblit-Community": "Community Participation",
+    "weblit-Community_desc": "Getting involved in web communities and understanding their practices",
+    "weblit-Privacy": "Privacy",
+    "weblit-Privacy_desc": "Examining the consequences of sharing data online",
+    "weblit-OpenPractices": "Open Practices",
+    "weblit-OpenPractices_desc": "Helping to keep the Web democratic and universally accessible"
+};
 
 
 
