@@ -54,7 +54,9 @@ function WebLiteracyClient(options) {
     return self.template.map(function(item) {
       return {
         term: self.strings[item.tag] || self.langs[DEFAULT_LANG][item.tag],
-        tag: item.tag
+        tag: item.tag,
+        color: item.color,
+        description: item.description
       };
     });
   };
