@@ -173,7 +173,7 @@ WebLiteracyClient.prototype.template = [
   },
   {
     "term": "Open Practices",
-    "description": "Helping to keep the Web democratic and universally accessible",
+    "description": "Helping to keep the web democratic and universally accessible",
     "tag": "weblit-OpenPractices",
     "deprecates": [],
     "color": "#0097d6"
@@ -209,7 +209,7 @@ WebLiteracyClient.prototype.langs["en"] = {
   "weblit-Privacy": "Privacy",
   "weblit-Privacy_desc": "Examining the consequences of sharing data online",
   "weblit-OpenPractices": "Open Practices",
-  "weblit-OpenPractices_desc": "Helping to keep the Web democratic and universally accessible"
+  "weblit-OpenPractices_desc": "Helping to keep the web democratic and universally accessible"
 };
 return WebLiteracyClient;
 
