@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 
   // Transifex
   var TRANSIFEX_APP = 'webliteracymap';
-  var SUPPORTED_LANGS = [ 'en-US', 'fr', 'zh-TW', 'th-TH', 'pt-BR', 'id', 'nl', 'km', 'en-CA', 'en-GB'];
+  var SUPPORTED_LANGS = [ 'en_US', 'fr', 'zh_TW', 'th_TH', 'pt_BR', 'id', 'nl', 'km', 'en_CA', 'en-GB'];
 
   // For JS processing
   var FUNCTION_NAME = 'WebLiteracyClient';
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
               var lang = filepath.split('/').splice(-2, 1)[0];
               if (SUPPORTED_LANGS.indexOf(lang) >= 0) {
                 grunt.log.writeln('Language "' + lang + '" added.');
-                return FUNCTION_NAME + '.prototype.langs["'+ lang +'"] = ' + src + ';';
+                return FUNCTION_NAME + '.prototype.langs["'+ lang.replace("_", "-") +'"] = ' + src + ';';
               }
 
             // Other
