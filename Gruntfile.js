@@ -13,6 +13,7 @@ module.exports = function(grunt) {
 
   // Transifex
   var TRANSIFEX_APP = 'webliteracymap';
+  var SUPPORTED_LANGS = [ 'en_US', 'fr', 'zh_TW', 'th_TH', 'pt_BR', 'id', 'nl', 'km', 'en_CA', 'en_GB'];
 
   // For JS processing
   var FUNCTION_NAME = 'WebLiteracyClient';
@@ -72,8 +73,9 @@ module.exports = function(grunt) {
 
             // Downloaded locales
             } else if (filepath.match(LOCALE_DIR)) {
-              var lang = filepath.split('/').splice(-2, 1);
-              if (lang !== 'en') {
+              var lang = filepath.split('/').splice(-2, 1)[0];
+              if (SUPPORTED_LANGS.indexOf(lang) >= 0) {
+                grunt.log.writeln('Language "' + lang + '" added.');
                 return FUNCTION_NAME + '.prototype.langs["'+ lang +'"] = ' + src + ';';
               }
 
@@ -94,6 +96,5 @@ module.exports = function(grunt) {
 
   // MAIN GRUNT TASKS
   grunt.registerTask('generate', ['clean:dist', 'convert']);
-  // grunt.registerTask('build', ['concat:basic']);
   grunt.registerTask('build', ['clean:locales', 'transifex', 'concat:basic', 'concat:withLocales']);
 };

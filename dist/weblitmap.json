@@ -23,12 +23,10 @@
   "weblit-Infrastructure_desc": "Understanding the Internet stack",
   "weblit-SharingCollaborating": "Sharing and Collaborating",
   "weblit-SharingCollaborating_desc": "Jointly creating and providing access to web resources",
-  "weblit-Collaborating": "Collaborating",
-  "weblit-Collaborating_desc": "Creating web resources with others",
   "weblit-Community": "Community Participation",
   "weblit-Community_desc": "Getting involved in web communities and understanding their practices",
   "weblit-Privacy": "Privacy",
   "weblit-Privacy_desc": "Examining the consequences of sharing data online",
   "weblit-OpenPractices": "Open Practices",
-  "weblit-OpenPractices_desc": "Helping to keep the Web democratic and universally accessible"
+  "weblit-OpenPractices_desc": "Helping to keep the web democratic and universally accessible"
 }
