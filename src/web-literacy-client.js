@@ -39,6 +39,17 @@ function WebLiteracyClient(options) {
     return self.strings[tag + options.descriptionSuffix];
   };
 
+  self.color = function(tag) {
+    var literacy = self.template.filter(function(item) {
+      return item.tag === tag;
+    })[0];
+    if (literacy) {
+      return literacy.color;
+    }
+  };
+  // O Canada!
+  self.colour = self.color;
+
   self.all = function() {
     return self.template.map(function(item) {
       return {

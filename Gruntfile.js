@@ -13,6 +13,7 @@ module.exports = function(grunt) {
 
   // Transifex
   var TRANSIFEX_APP = 'webliteracymap';
+  var SUPPORTED_LANGS = ['en_US', 'fr'];
 
   // For JS processing
   var FUNCTION_NAME = 'WebLiteracyClient';
@@ -95,5 +96,5 @@ module.exports = function(grunt) {
   // MAIN GRUNT TASKS
   grunt.registerTask('generate', ['clean:dist', 'convert']);
   // grunt.registerTask('build', ['concat:basic']);
-  grunt.registerTask('build', ['clean:locales', 'transifex', 'concat:basic', 'concat:withLocales']);
+  grunt.registerTask('build', ['clean:locales', 'concat:basic', 'concat:withLocales']);
 };

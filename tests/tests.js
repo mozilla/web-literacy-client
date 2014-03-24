@@ -1,22 +1,16 @@
-test('Main functions exist', function() {
+test('new WebLiteracyClient() should create an object with .langs and should have .template on its prototype', function() {
   var wlc = new WebLiteracyClient();
-  ok(typeof wlc.all === 'function', 'Passed!');
-  ok(typeof wlc.term === 'function', 'Passed!');
-  ok(typeof wlc.description === 'function', 'Passed!');
+  ok(typeof wlc === 'object');
+  ok(typeof WebLiteracyClient.prototype.langs === 'object');
+  ok(WebLiteracyClient.prototype.template.length);
 });
 
-test('Langs exist, default en lang exists', function() {
+test('The default "en" lang should exist', function() {
   var wlc = new WebLiteracyClient();
-  ok(typeof wlc.langs === 'object');
   ok(typeof wlc.langs.en === 'object');
 });
 
-test('Template exists', function() {
-  var wlc = new WebLiteracyClient();
-  ok(typeof wlc.template === 'object');
-});
-
-test('Set options works', function() {
+test('Setting options in the constructor should work', function() {
   var wlc = new WebLiteracyClient({
     descriptionSuffix: '-descy'
   });
@@ -25,7 +19,7 @@ test('Set options works', function() {
   // TODO: more options
 });
 
-test('Set lang works', function() {
+test('.lang(language) should set the language', function() {
   var wlc = new WebLiteracyClient();
   ok(wlc.strings);
   wlc.lang('en')
@@ -33,7 +27,7 @@ test('Set lang works', function() {
   // TODO: test when languages are not supported
 });
 
-test('supportedLangs works and contains en', function() {
+test('.supportedLangs() should return an array containing "en"', function() {
   var wlc = new WebLiteracyClient();
   var langlist = wlc.supportedLangs();
 
@@ -46,7 +40,7 @@ test('supportedLangs works and contains en', function() {
 
 });
 
-test('Get term works', function() {
+test('.term works', function() {
   var wlc = new WebLiteracyClient();
   var tag = wlc.all()[0].tag;
   var term = wlc.all()[0].term;
@@ -54,11 +48,20 @@ test('Get term works', function() {
   ok(wlc.term(tag) === term);
 });
 
-test('Get description works', function() {
+test('.description works', function() {
   var wlc = new WebLiteracyClient();
   var desc = wlc.template[0].description;
   var tag = wlc.template[0].tag;
 
   ok(wlc.description(tag) === desc);
+});
+
+test('.colo[u]r works', function() {
+  var wlc = new WebLiteracyClient();
+  var color = wlc.template[0].color;
+  var tag = wlc.template[0].tag;
+
+  ok(wlc.color(tag) === color);
+  ok(wlc.colour(tag) === color);
 });
 
