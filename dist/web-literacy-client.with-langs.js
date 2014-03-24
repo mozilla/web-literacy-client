@@ -153,11 +153,20 @@ WebLiteracyClient.prototype.template = [
     "color": "#09b773"
   },
   {
-    "term": "Sharing and Collaborating",
-    "description": "Jointly creating and providing access to web resources",
-    "tag": "weblit-SharingCollaborating",
-    "deprecates": [],
+    "term": "Sharing",
+    "description": "Creating web resources with others",
+    "tag": "weblit-Sharing",
+    "deprecates": [
+      "weblit-SharingCollaborating"
+    ],
     "color": "#739ab1"
+  },
+  {
+    "term": "Collaborating",
+    "description": "Providing access to web resources",
+    "tag": "weblit-Collaborating",
+    "deprecates": [],
+    "color": "#506b7b"
   },
   {
     "term": "Community Participation",
@@ -183,7 +192,7 @@ WebLiteracyClient.prototype.template = [
 ];
 WebLiteracyClient.prototype.langs["en"] = {
   "WBLIT-MAP": "Web Literacy Map",
-  "WBLIT-VERSION": "1.0.0",
+  "WBLIT-VERSION": "1.1.0",
   "weblit-Navigation": "Navigation",
   "weblit-Navigation_desc": "Using software tools to browse the web",
   "weblit-WebMechanics": "Web Mechanics",
@@ -204,8 +213,12 @@ WebLiteracyClient.prototype.langs["en"] = {
   "weblit-CodingScripting_desc": "Creating interactive experiences on the web",
   "weblit-Infrastructure": "Infrastructure",
   "weblit-Infrastructure_desc": "Understanding the Internet stack",
-  "weblit-SharingCollaborating": "Sharing and Collaborating",
-  "weblit-SharingCollaborating_desc": "Jointly creating and providing access to web resources",
+  "weblit-Sharing": "Sharing",
+  "weblit-Sharing_desc": "Creating web resources with others",
+  "weblit-SharingCollaborating": "Sharing",
+  "weblit-SharingCollaborating_desc": "Creating web resources with others",
+  "weblit-Collaborating": "Collaborating",
+  "weblit-Collaborating_desc": "Providing access to web resources",
   "weblit-Community": "Community Participation",
   "weblit-Community_desc": "Getting involved in web communities and understanding their practices",
   "weblit-Privacy": "Privacy",
