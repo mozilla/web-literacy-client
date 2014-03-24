@@ -2,7 +2,7 @@
   "title": "Web Literacy Map",
   "titleKey": "WBLIT-MAP",
   "versionKey": "WBLIT-VERSION",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "descriptionSuffix": "_desc",
   "literacies": [
     {
@@ -76,11 +76,18 @@
         "color": "#09b773"
     },
     {
-        "term": "Sharing and Collaborating",
-        "description": "Jointly creating and providing access to web resources",
-        "tag": "weblit-SharingCollaborating",
-        "deprecates": [],
+        "term": "Sharing",
+        "description": "Creating web resources with others",
+        "tag": "weblit-Sharing",
+        "deprecates": ["weblit-SharingCollaborating"],
         "color": "#739ab1"
+    },
+    {
+        "term": "Collaborating",
+        "description": "Providing access to web resources",
+        "tag": "weblit-Collaborating",
+        "deprecates": [],
+        "color": "#506b7b"
     },
     {
         "term": "Community Participation",
