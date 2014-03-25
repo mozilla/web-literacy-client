@@ -1,3 +1,5 @@
+var TESTLANG = 'fr';
+
 test('new WebLiteracyClient() should create an object with .langs and should have .template on its prototype', function() {
   var wlc = new WebLiteracyClient();
   ok(typeof wlc === 'object');
@@ -14,7 +16,6 @@ test('Setting options in the constructor should work', function() {
   var wlc = new WebLiteracyClient({
     descriptionSuffix: '-descy'
   });
-  console.log(wlc);
   ok(wlc.options.descriptionSuffix === '-descy');
   // TODO: more options
 });
@@ -63,5 +64,31 @@ test('.colo[u]r works', function() {
 
   ok(wlc.color(tag) === color);
   ok(wlc.colour(tag) === color);
+});
+
+test('.all works', function() {
+  var wlc = new WebLiteracyClient();
+  var testIndex = 2;
+
+  wlc.lang(TESTLANG);
+  var tag = wlc.template[testIndex].tag;
+  var color = wlc.template[testIndex].color;
+  var strings = wlc.langs[TESTLANG];
+  var enStrings = wlc.langs.en;
+
+  var allTest = wlc.all()[testIndex];
+
+  ok(allTest.term === strings[tag]);
+  ok(allTest.color === color);
+  ok(allTest.colour === color);
+  ok(allTest.description === strings[tag + wlc.options.descriptionSuffix]);
+
+  // Patch in a fake language to test English fall-backs
+  wlc.langs['girbberish'] = [];
+  wlc.lang('girbberish');
+
+  var fakeLangTest = wlc.all()[testIndex];
+  ok(fakeLangTest.term === enStrings[tag]);
+  ok(fakeLangTest.description === enStrings[tag + wlc.options.descriptionSuffix]);
 });
 

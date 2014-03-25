@@ -36,7 +36,7 @@ function WebLiteracyClient(options) {
   };
 
   self.description = function(tag) {
-    return self.strings[tag + options.descriptionSuffix];
+    return self.strings[tag + options.descriptionSuffix] || self.langs[DEFAULT_LANG][tag + options.descriptionSuffix];
   };
 
   self.color = function(tag) {
@@ -53,10 +53,11 @@ function WebLiteracyClient(options) {
   self.all = function() {
     return self.template.map(function(item) {
       return {
-        term: self.strings[item.tag] || self.langs[DEFAULT_LANG][item.tag],
+        term: self.term(item.tag),
         tag: item.tag,
         color: item.color,
-        description: item.description
+        colour: item.color,
+        description: self.description(item.tag)
       };
     });
   };
