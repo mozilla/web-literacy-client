@@ -48,7 +48,7 @@
 </head>
 <body>
   <div class="container">
-    <h2 class="text-center page-header">Web Literacy Standard (1.0.0) Localized tags demo</h2>
+    <h2 id="title" class="text-center page-header"></h2>
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3">
         <p>
@@ -94,6 +94,7 @@
         $('#tagger').autocomplete().setOptions({
           lookup: suggestions
         });
+        $("#title").html( wlc.title() + ' ' + wlc.version );
       }
 
       $('#tagger').autocomplete({
