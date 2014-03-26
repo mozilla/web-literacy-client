@@ -242,9 +242,10 @@ WebLiteracyClient.prototype.langs["en"] = {
 
 
 
+
 WebLiteracyClient.prototype.langs["en-CA"] = {
     "WBLIT-MAP": "Web Literacy Map",
-    "WBLIT-VERSION": "1.0.0",
+    "WBLIT-VERSION": "1.1.0",
     "weblit-Navigation": "Navigation",
     "weblit-Navigation_desc": "Using software tools to browse the web",
     "weblit-WebMechanics": "Web Mechanics",
@@ -265,20 +266,22 @@ WebLiteracyClient.prototype.langs["en-CA"] = {
     "weblit-CodingScripting_desc": "Creating interactive experiences on the web",
     "weblit-Infrastructure": "Infrastructure",
     "weblit-Infrastructure_desc": "Understanding the Internet stack",
-    "weblit-SharingCollaborating": "Sharing and Collaborating",
-    "weblit-SharingCollaborating_desc": "Jointly creating and providing access to web resources",
+    "weblit-Sharing": "Sharing",
+    "weblit-Sharing_desc": "Creating web resources with others",
+    "weblit-SharingCollaborating": "Sharing",
+    "weblit-SharingCollaborating_desc": "Creating web resources with others",
     "weblit-Collaborating": "Collaborating",
-    "weblit-Collaborating_desc": "Creating web resources with others",
+    "weblit-Collaborating_desc": "Providing access to web resources",
     "weblit-Community": "Community Participation",
     "weblit-Community_desc": "Getting involved in web communities and understanding their practices",
     "weblit-Privacy": "Privacy",
     "weblit-Privacy_desc": "Examining the consequences of sharing data online",
     "weblit-OpenPractices": "Open Practices",
-    "weblit-OpenPractices_desc": "Helping to keep the Web democratic and universally accessible"
+    "weblit-OpenPractices_desc": "Helping to keep the web democratic and universally accessible"
 };
 WebLiteracyClient.prototype.langs["en-GB"] = {
     "WBLIT-MAP": "Web Literacy Map",
-    "WBLIT-VERSION": "1.0.0",
+    "WBLIT-VERSION": "1.1.0",
     "weblit-Navigation": "Navigation",
     "weblit-Navigation_desc": "Using software tools to browse the web",
     "weblit-WebMechanics": "Web Mechanics",
@@ -299,16 +302,18 @@ WebLiteracyClient.prototype.langs["en-GB"] = {
     "weblit-CodingScripting_desc": "Creating interactive experiences on the web",
     "weblit-Infrastructure": "Infrastructure",
     "weblit-Infrastructure_desc": "Understanding the Internet stack",
-    "weblit-SharingCollaborating": "Sharing and Collaborating",
-    "weblit-SharingCollaborating_desc": "Jointly creating and providing access to web resources",
+    "weblit-Sharing": "Sharing",
+    "weblit-Sharing_desc": "Creating web resources with others",
+    "weblit-SharingCollaborating": "Sharing",
+    "weblit-SharingCollaborating_desc": "Creating web resources with others",
     "weblit-Collaborating": "Collaborating",
-    "weblit-Collaborating_desc": "Creating web resources with others",
+    "weblit-Collaborating_desc": "Providing access to web resources",
     "weblit-Community": "Community Participation",
     "weblit-Community_desc": "Getting involved in web communities and understanding their practices",
     "weblit-Privacy": "Privacy",
     "weblit-Privacy_desc": "Examining the consequences of sharing data online",
     "weblit-OpenPractices": "Open Practices",
-    "weblit-OpenPractices_desc": "Helping to keep the Web democratic and universally accessible"
+    "weblit-OpenPractices_desc": "Helping to keep the web democratic and universally accessible"
 };
 
 
@@ -326,7 +331,7 @@ WebLiteracyClient.prototype.langs["en-GB"] = {
 
 WebLiteracyClient.prototype.langs["fr"] = {
     "WBLIT-MAP": "Carte de la Littéracie Web",
-    "WBLIT-VERSION": "1.0.0",
+    "WBLIT-VERSION": "1.1.0",
     "weblit-Navigation": "Navigation",
     "weblit-Navigation_desc": "Utiliser des outils logiciels pour naviguer sur le Web",
     "weblit-WebMechanics": "Mécanismes du web",
@@ -347,16 +352,18 @@ WebLiteracyClient.prototype.langs["fr"] = {
     "weblit-CodingScripting_desc": "Créer des expériences interactives sur le web",
     "weblit-Infrastructure": "Infrastructure",
     "weblit-Infrastructure_desc": "Comprendre le modèle Internet",
-    "weblit-SharingCollaborating": "Partager et collaborer",
-    "weblit-SharingCollaborating_desc": "Créer et publier ensemble des ressources web",
+    "weblit-Sharing": "Sharing",
+    "weblit-Sharing_desc": "Creating web resources with others",
+    "weblit-SharingCollaborating": "Sharing",
+    "weblit-SharingCollaborating_desc": "Creating web resources with others",
     "weblit-Collaborating": "Collaborating",
-    "weblit-Collaborating_desc": "Creating web resources with others",
+    "weblit-Collaborating_desc": "Providing access to web resources",
     "weblit-Community": "Participation communautaire",
     "weblit-Community_desc": "Rejoindre des communautés en ligne et comprendre leurs usages",
     "weblit-Privacy": "Vie privée",
     "weblit-Privacy_desc": "Considérer les conséquences du partage de données en ligne",
     "weblit-OpenPractices": "Pratiques ouvertes",
-    "weblit-OpenPractices_desc": "Helping to keep the Web democratic and universally accessible"
+    "weblit-OpenPractices_desc": "Contribuer à garder le Web démocratique et accessible universellement"
 };
 
 
@@ -368,7 +375,7 @@ WebLiteracyClient.prototype.langs["fr"] = {
 
 WebLiteracyClient.prototype.langs["id"] = {
     "WBLIT-MAP": "Peta Literasi Web",
-    "WBLIT-VERSION": "1.0.0",
+    "WBLIT-VERSION": "1.1.0",
     "weblit-Navigation": "Navigasi",
     "weblit-Navigation_desc": "Menggunakan perangkat lunak untuk menjelajahi web",
     "weblit-WebMechanics": "Mekanika Web",
@@ -389,16 +396,18 @@ WebLiteracyClient.prototype.langs["id"] = {
     "weblit-CodingScripting_desc": "Membangun pengalaman interaktif di web",
     "weblit-Infrastructure": "Infrastruktur",
     "weblit-Infrastructure_desc": "Memahami lapisan Internet",
-    "weblit-SharingCollaborating": "Berbagi dan Berkolaborasi",
-    "weblit-SharingCollaborating_desc": "Bersama menciptakan dan menyediakan akses ke sumber daya web",
+    "weblit-Sharing": "Berbagi",
+    "weblit-Sharing_desc": "Membuat sumber daya dengan orang lain",
+    "weblit-SharingCollaborating": "Bagikan",
+    "weblit-SharingCollaborating_desc": "Membuat sumber daya dengan orang lain",
     "weblit-Collaborating": "Berkolaborasi",
-    "weblit-Collaborating_desc": "Membuat sumber daya dengan orang lain",
+    "weblit-Collaborating_desc": "Menyediakan akses ke sumber daya web",
     "weblit-Community": "Partisipasi Komunitas",
     "weblit-Community_desc": "Terlibat dalam komunitas web dan memahami praktik mereka",
     "weblit-Privacy": "Privasi",
     "weblit-Privacy_desc": "Meneliti konsekuensi dari berbagi data secara online",
     "weblit-OpenPractices": "Praktik Terbuka",
-    "weblit-OpenPractices_desc": "Membantu menjaga demokrasi Web dan kemampuan untuk dapat diakses secara universal"
+    "weblit-OpenPractices_desc": "Membantu menjaga agar web tetap demokratis dan dapat diakses secara universal"
 };
 
 
@@ -406,7 +415,7 @@ WebLiteracyClient.prototype.langs["id"] = {
 
 WebLiteracyClient.prototype.langs["km"] = {
     "WBLIT-MAP": "Web Literacy Map",
-    "WBLIT-VERSION": "1.0.0",
+    "WBLIT-VERSION": "1.1.0",
     "weblit-Navigation": "ការ​រុករក",
     "weblit-Navigation_desc": "ប្រើ​ឧបករណ៍​កម្មវិធី​ដើម្បី​រកមើល​បណ្ដាញ​",
     "weblit-WebMechanics": "យន្ត​ការី​បណ្ដាញ",
@@ -422,21 +431,23 @@ WebLiteracyClient.prototype.langs["km"] = {
     "weblit-Remix": "បញ្ចូល​គ្នា​",
     "weblit-Remix_desc": "ការ​កែប្រែ​ធនធាន​បណ្ដាញ​ដែល​មាន​ស្រាប់​ដើម្បី​​បង្កើត​អ្វី​មួយ​ថ្មី",
     "weblit-DesignAccessibility": "រចនា និង​ភាព​ជឿជាក់",
-    "weblit-DesignAccessibility_desc": "ការ​បង្កើត​ទំនាក់ទំនង​មាន​ប្រសិទ្ធភាព​ជា​សកល​តាម​រយៈ​ធនធាន",
+    "weblit-DesignAccessibility_desc": "ការ​បង្កើត​ទំនាក់ទំនង​មាន​ប្រសិទ្ធភាព​ជា​សកល​តាម​រយៈ​ធនធាន​បណ្ដាញ",
     "weblit-CodingScripting": "ការ​កូដ/ការ​ស្គ្រីប",
     "weblit-CodingScripting_desc": "ការ​បង្កើត​បទពិសោធន៍​​នៃ​អន្តរកម្ម​នៅ​លើ​បណ្ដាញ",
     "weblit-Infrastructure": "ហេដ្ឋារចនាសម្ព័ន្ធ",
     "weblit-Infrastructure_desc": "ការ​យល់​ពី​ជង់​អ៊ីនធឺណិត​",
-    "weblit-SharingCollaborating": "ការ​ចែករំលែក និង​ការ​សហការ",
-    "weblit-SharingCollaborating_desc": "ដោយ​ចូលរួម​បង្កើត និង​ផ្ដល់​​ការ​ចូល​ដំណើរការ​ធនធាន​បណ្ដាញ",
+    "weblit-Sharing": "ការ​ចែករំលែក",
+    "weblit-Sharing_desc": "បង្កើត​ធនធាន​បណ្ដាញ​ជាមួយ​អ្នក​ផ្សេង",
+    "weblit-SharingCollaborating": "ការ​ចែករំលែក",
+    "weblit-SharingCollaborating_desc": "បង្កើត​ធនធាន​បណ្ដាញ​ជាមួយ​អ្នក​ដទៃ",
     "weblit-Collaborating": "ការ​សហការ",
-    "weblit-Collaborating_desc": "បង្កើត​ធនធាន​បណ្ដាញ​ជាមួយ​អ្នក​ដទៃ",
+    "weblit-Collaborating_desc": "អនុញ្ញាត​ឲ្យ​ចូល​ទៅ​កាន់​ធនធាន​បណ្ដាញ",
     "weblit-Community": "ការ​ចូលរួម​សហគមន៍",
     "weblit-Community_desc": "ទាក់ទង​សហគមន៍​បណ្ដាញ និង​យល់​ពី​ការ​អនុវត្ត​របស់​ពួកគេ",
     "weblit-Privacy": "ភាព​ឯកជន",
     "weblit-Privacy_desc": "ការ​ពិនិត្យមើល​លទ្ធផល​នៃ​ការ​ចែករំលែក​ទិន្នន័យ​លើ​បណ្ដាញ",
     "weblit-OpenPractices": "បើក​ការ​​អនុវត្ត",
-    "weblit-OpenPractices_desc": "ជួយ​ធ្វើ​ឲ្យ​បណ្ដាញអាចចូលដំណើរការ​ដោយ​សេរី និង​​ជា​សកល"
+    "weblit-OpenPractices_desc": "ជំនួយ​ក្នុង​ការ​រក្សា​បណ្ដាញ​ទូទៅ និង​អាច​ចូល​ដំណើរការ​បាន​ជា​សកល"
 };
 
 
@@ -455,7 +466,7 @@ WebLiteracyClient.prototype.langs["km"] = {
 
 WebLiteracyClient.prototype.langs["nl"] = {
     "WBLIT-MAP": "Webeducatiekaart",
-    "WBLIT-VERSION": "1.0.0",
+    "WBLIT-VERSION": "1.1.0",
     "weblit-Navigation": "Navigatie",
     "weblit-Navigation_desc": "Softwarehulpmiddelen gebruiken om te browsen op het web",
     "weblit-WebMechanics": "Webmonteurs",
@@ -476,10 +487,12 @@ WebLiteracyClient.prototype.langs["nl"] = {
     "weblit-CodingScripting_desc": "Interactieve belevenissen op het web maken",
     "weblit-Infrastructure": "Infrastructuur",
     "weblit-Infrastructure_desc": "De Internetstructuur begrijpen",
-    "weblit-SharingCollaborating": "Delen en samenwerken",
-    "weblit-SharingCollaborating_desc": "Gezamenlijk webbronnen creëren en toegankelijk maken",
+    "weblit-Sharing": "Delen",
+    "weblit-Sharing_desc": "Webbronnen maken met anderen",
+    "weblit-SharingCollaborating": "Delen",
+    "weblit-SharingCollaborating_desc": "Webbronnen maken met anderen",
     "weblit-Collaborating": "Samenwerking",
-    "weblit-Collaborating_desc": "Webbronnen maken met anderen",
+    "weblit-Collaborating_desc": "Toegang tot webbronnen bieden",
     "weblit-Community": "Gemeenschapsparticipatie",
     "weblit-Community_desc": "Betrokken raken bij webgemeenschappen en hun werkzaamheden begrijpen",
     "weblit-Privacy": "Privacy",
@@ -494,7 +507,7 @@ WebLiteracyClient.prototype.langs["nl"] = {
 
 WebLiteracyClient.prototype.langs["pt-BR"] = {
     "WBLIT-MAP": "Padrão de Alfabetização para a Web",
-    "WBLIT-VERSION": "1.0.0",
+    "WBLIT-VERSION": "1.1.0",
     "weblit-Navigation": "Navegação",
     "weblit-Navigation_desc": "Utilizando ferramentas de software para navegar na web",
     "weblit-WebMechanics": "Mecânica da web",
@@ -515,10 +528,12 @@ WebLiteracyClient.prototype.langs["pt-BR"] = {
     "weblit-CodingScripting_desc": "Criando experiências interativas na web",
     "weblit-Infrastructure": "Infraestrutura",
     "weblit-Infrastructure_desc": "Entender a pilha da Internet",
-    "weblit-SharingCollaborating": "Compartilhar e Colaborar",
-    "weblit-SharingCollaborating_desc": "Criar e prover acesso conjunto a recursos web",
+    "weblit-Sharing": "Compartilhando",
+    "weblit-Sharing_desc": "Criar recursos para web com outras pessoas",
+    "weblit-SharingCollaborating": "Compartilhando",
+    "weblit-SharingCollaborating_desc": "Criar recursos web com outras pessoas",
     "weblit-Collaborating": "Colaboração",
-    "weblit-Collaborating_desc": "Criar recursos para web com outras pessoas",
+    "weblit-Collaborating_desc": "Provendo acesso a recursos web",
     "weblit-Community": "Participação da Comunidade",
     "weblit-Community_desc": "Envolver-se com comunidades web e entender suas práticas",
     "weblit-Privacy": "Privacidade",
@@ -540,7 +555,7 @@ WebLiteracyClient.prototype.langs["pt-BR"] = {
 
 WebLiteracyClient.prototype.langs["th-TH"] = {
     "WBLIT-MAP": "แผนที่ความรู้เว็บ",
-    "WBLIT-VERSION": "1.0.0",
+    "WBLIT-VERSION": "1.1.0",
     "weblit-Navigation": "การนำทาง",
     "weblit-Navigation_desc": "ใช้เครื่องมือซอฟต์แวร์ในการเรียกค้นและสำรวจเว็บ",
     "weblit-WebMechanics": "ช่างกลเว็บ",
@@ -561,10 +576,12 @@ WebLiteracyClient.prototype.langs["th-TH"] = {
     "weblit-CodingScripting_desc": "การสร้างประสบการณ์การโต้ตอบบนเว็บ",
     "weblit-Infrastructure": "โครงสร้างพื้นฐาน",
     "weblit-Infrastructure_desc": "เข้าใจแต่ละชั้นของอินเตอร์เน็ท",
-    "weblit-SharingCollaborating": "แบ่งปันและการทำงานร่วมกัน",
-    "weblit-SharingCollaborating_desc": "ร่วมกันสร้างและทำให้การเข้าถึงทรัพยากรของเว็บ",
+    "weblit-Sharing": "แบ่งปัน",
+    "weblit-Sharing_desc": "การสร้างทรัพยากรของเว็บกับคนอื่น",
+    "weblit-SharingCollaborating": "แบ่งปัน",
+    "weblit-SharingCollaborating_desc": "การสร้างทรัพยากรของเว็บกับคนอื่น",
     "weblit-Collaborating": "ร่วมมือ",
-    "weblit-Collaborating_desc": "การสร้างทรัพยากรของเว็บกับคนอื่น",
+    "weblit-Collaborating_desc": "การเข้าถึงทรัพยากรของเว็บ",
     "weblit-Community": "การมีส่วนร่วมในชุมชน",
     "weblit-Community_desc": "การมีส่วนร่วมในชุมชนบนเว็บและเข้าใจการปฏิบัติของพวกเขา",
     "weblit-Privacy": "ความเป็นส่วนตัว",
@@ -584,7 +601,7 @@ WebLiteracyClient.prototype.langs["th-TH"] = {
 
 WebLiteracyClient.prototype.langs["zh-TW"] = {
     "WBLIT-MAP": "Web 素養一覽",
-    "WBLIT-VERSION": "1.0.0",
+    "WBLIT-VERSION": "1.1.0",
     "weblit-Navigation": "瀏覽",
     "weblit-Navigation_desc": "使用軟體工具瀏覽網站",
     "weblit-WebMechanics": "Web 原理與操作",
@@ -605,16 +622,18 @@ WebLiteracyClient.prototype.langs["zh-TW"] = {
     "weblit-CodingScripting_desc": "打造 Web 上的互動體驗",
     "weblit-Infrastructure": "基礎架構",
     "weblit-Infrastructure_desc": "了解網際網路架構",
-    "weblit-SharingCollaborating": "分享和協作",
-    "weblit-SharingCollaborating_desc": "共同建立並提供網路資源",
+    "weblit-Sharing": "分享",
+    "weblit-Sharing_desc": "與他人合作打造 Web 資源",
+    "weblit-SharingCollaborating": "分享",
+    "weblit-SharingCollaborating_desc": "與他人合作打造 Web 資源",
     "weblit-Collaborating": "協作",
-    "weblit-Collaborating_desc": "與他人合作打造 Web 資源",
+    "weblit-Collaborating_desc": "提供 Web 資源的存取",
     "weblit-Community": "社群參與",
     "weblit-Community_desc": "參與網路社群並且瞭解他們的作法",
     "weblit-Privacy": "隱私政策",
     "weblit-Privacy_desc": "評估在線上分享資料後的影響",
     "weblit-OpenPractices": "實踐開放",
-    "weblit-OpenPractices_desc": "協助讓 Web 保持民主、舉世皆可取用"
+    "weblit-OpenPractices_desc": "協助讓 Web 保持民主、隨處可用"
 };
 return WebLiteracyClient;
 
