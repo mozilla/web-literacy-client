@@ -1,6 +1,6 @@
 function WebLiteracyClient(options) {
 
-  var DEFAULT_LANG = 'en';
+  var DEFAULT_LANG = 'en-US';
 
   var self = this;
 
@@ -17,18 +17,25 @@ function WebLiteracyClient(options) {
     return keys;
   };
 
+  // Version
+  self.version = self.template.version;
+
   // Set language to English be default
-  self.strings = self.langs.en;
+  self.strings = self.langs[DEFAULT_LANG];
 
   // Allow users to set language
   self.lang = function(l) {
     if (l && self.supportedLangs().indexOf(l) <= -1 ) {
-      return console.error('Sorry, ' + l + 'is not a supported language in this release.');
+      return console.error('Sorry, ' + l + ' is not a supported language in this release.');
     }
     else if (l) {
       self.strings = self.langs[l];
     }
     return self.strings;
+  };
+
+  self.title = function() {
+    return self.strings[self.template.titleKey] || self.langs[DEFAULT_LANG][self.template.titleKey];
   };
 
   self.term = function(tag) {
@@ -40,7 +47,7 @@ function WebLiteracyClient(options) {
   };
 
   self.color = function(tag) {
-    var literacy = self.template.filter(function(item) {
+    var literacy = self.template.literacies.filter(function(item) {
       return item.tag === tag;
     })[0];
     if (literacy) {
@@ -51,7 +58,7 @@ function WebLiteracyClient(options) {
   self.colour = self.color;
 
   self.all = function() {
-    return self.template.map(function(item) {
+    return self.template.literacies.map(function(item) {
       return {
         term: self.term(item.tag),
         tag: item.tag,

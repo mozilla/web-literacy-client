@@ -108,8 +108,7 @@
       });
 
       //Selects
-      // wlc.supportedLangs()
-      ['en', 'fr', 'zh_CN', 'ar'].forEach(function(lang) {
+      wlc.supportedLangs().forEach(function(lang) {
         $('#language').append('<option value="' + lang +'">' + lang +'</option>');
       });
 
@@ -117,18 +116,16 @@
         setSuggestions(this.value);
       });
 
-      $('#language').val('en');
-      setSuggestions('en');
+      $('#language').val('en-US');
+      setSuggestions('en-US');
 
       function makeGallery() {
-        var tags = selectedTags.map(function(item) { return item.replace('weblit-', '').toLowerCase()});
-        console.log(tags);
         new MakeGallery({
           limit: 20,
           sortByField: 'likes',
           or: true,
           tags: {
-            tags: tags
+            tags: selectedTags
           }
         }, {
           apiURL: 'https://makeapi.webmaker.org',
