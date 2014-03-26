@@ -13,7 +13,9 @@ module.exports = function(grunt) {
 
   // Transifex
   var TRANSIFEX_APP = 'webliteracymap';
-  var SUPPORTED_LANGS = [ 'en_US', 'fr', 'zh_TW', 'th_TH', 'pt_BR', 'id', 'nl', 'km', 'en_CA', 'en_GB'];
+  // Don't include en-US in SUPPORTED_LANGS
+  var SUPPORTED_LANGS = [ 'hi-IN', 'zh-CH', 'bn-BD', 'vi-VN', 'it', 'sv', 'sq', 'es-CL', 'es-MX', 'ru', 'te', 'bn-IN', 'en-GB', 'pt', 'sl', 'pa-IN', 'id', 'km', 'de', 'es', 'en-CA', 'fr', 'fa', 'th-TH', 'pt-BR', 'nl', 'zh-TW' ];
+  var DEFAULT_LANG = 'en-US';
 
   // For JS processing
   var FUNCTION_NAME = 'WebLiteracyClient';
@@ -43,11 +45,11 @@ module.exports = function(grunt) {
             // Template file (weblitmap.json)
             if (filepath.match(SRC_DIR + TEMPLATE_FILENAME)) {
               var json = JSON.parse(src);
-              return FUNCTION_NAME + '.prototype.template = ' + JSON.stringify(json.literacies, null, '  ') + ';';
+              return FUNCTION_NAME + '.prototype.template = ' + JSON.stringify(json, null, '  ') + ';';
 
             // English strings
             } else if (filepath.match(DIST_DIR)) {
-              return FUNCTION_NAME + '.prototype.langs["en"] = ' + src + ';';
+              return FUNCTION_NAME + '.prototype.langs["' + DEFAULT_LANG + '"] = ' + src + ';';
 
             // Other
             } else {
@@ -65,18 +67,18 @@ module.exports = function(grunt) {
             // Template file (weblitmap.json)
             if (filepath.match(SRC_DIR + TEMPLATE_FILENAME)) {
               var json = JSON.parse(src);
-              return FUNCTION_NAME + '.prototype.template = ' + JSON.stringify(json.literacies, null, '  ') + ';';
+              return FUNCTION_NAME + '.prototype.template = ' + JSON.stringify(json, null, '  ') + ';';
 
             // English strings
             } else if (filepath.match(DIST_DIR) && filepath.match('json')) {
-              return FUNCTION_NAME + '.prototype.langs["en"] = ' + src + ';';
+              return FUNCTION_NAME + '.prototype.langs["' + DEFAULT_LANG + '"] = ' + src + ';';
 
             // Downloaded locales
             } else if (filepath.match(LOCALE_DIR)) {
-              var lang = filepath.split('/').splice(-2, 1)[0];
+              var lang = filepath.split('/').splice(-2, 1)[0].replace("_", "-");
               if (SUPPORTED_LANGS.indexOf(lang) >= 0) {
                 grunt.log.writeln('Language "' + lang + '" added.');
-                return FUNCTION_NAME + '.prototype.langs["'+ lang.replace("_", "-") +'"] = ' + src + ';';
+                return FUNCTION_NAME + '.prototype.langs["'+ lang +'"] = ' + src + ';';
               }
 
             // Other
