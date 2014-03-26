@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 
   // Transifex
   var TRANSIFEX_APP = 'webliteracymap';
-  var SUPPORTED_LANGS = [ 'fr', 'zh-TW', 'th-TH', 'pt-BR', 'id', 'nl', 'km', 'en-CA', 'en-GB']; // Don't include en_US
+  var SUPPORTED_LANGS = [ 'fr', 'zh-TW', 'th-TH', 'pt-BR', 'id', 'nl', 'km', 'en-CA', 'en-GB']; // Don't include en-US
   var DEFAULT_LANG = 'en-US';
 
   // For JS processing
@@ -66,7 +66,6 @@ module.exports = function(grunt) {
             // Template file (weblitmap.json)
             if (filepath.match(SRC_DIR + TEMPLATE_FILENAME)) {
               var json = JSON.parse(src);
-              console.log(json);
               return FUNCTION_NAME + '.prototype.template = ' + JSON.stringify(json, null, '  ') + ';';
 
             // English strings
