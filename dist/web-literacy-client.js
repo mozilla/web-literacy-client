@@ -15,7 +15,7 @@
 }(this, function() {
 function WebLiteracyClient(options) {
 
-  var DEFAULT_LANG = 'en';
+  var DEFAULT_LANG = 'en-US';
 
   var self = this;
 
@@ -32,18 +32,25 @@ function WebLiteracyClient(options) {
     return keys;
   };
 
+  // Version
+  self.version = self.template.version;
+
   // Set language to English be default
-  self.strings = self.langs.en;
+  self.strings = self.langs[DEFAULT_LANG];
 
   // Allow users to set language
   self.lang = function(l) {
     if (l && self.supportedLangs().indexOf(l) <= -1 ) {
-      return console.error('Sorry, ' + l + 'is not a supported language in this release.');
+      return console.error('Sorry, ' + l + ' is not a supported language in this release.');
     }
     else if (l) {
       self.strings = self.langs[l];
     }
     return self.strings;
+  };
+
+  self.title = function() {
+    return self.strings[self.template.titleKey] || self.langs[DEFAULT_LANG][self.template.titleKey];
   };
 
   self.term = function(tag) {
@@ -55,7 +62,7 @@ function WebLiteracyClient(options) {
   };
 
   self.color = function(tag) {
-    var literacy = self.template.filter(function(item) {
+    var literacy = self.template.literacies.filter(function(item) {
       return item.tag === tag;
     })[0];
     if (literacy) {
@@ -66,7 +73,7 @@ function WebLiteracyClient(options) {
   self.colour = self.color;
 
   self.all = function() {
-    return self.template.map(function(item) {
+    return self.template.literacies.map(function(item) {
       return {
         term: self.term(item.tag),
         tag: item.tag,
@@ -82,116 +89,123 @@ function WebLiteracyClient(options) {
 // Set up languages
 WebLiteracyClient.prototype.langs = {};
 
-WebLiteracyClient.prototype.template = [
-  {
-    "term": "Navigation",
-    "description": "Using software tools to browse the web",
-    "tag": "weblit-Navigation",
-    "deprecates": [],
-    "color": "#ff4e1f"
-  },
-  {
-    "term": "Web Mechanics",
-    "description": "Understanding the web ecosystem",
-    "tag": "weblit-WebMechanics",
-    "deprecates": [],
-    "color": "#ff6969"
-  },
-  {
-    "term": "Search",
-    "description": "Locating information, people and resources via the web",
-    "tag": "weblit-Search",
-    "deprecates": [],
-    "color": "#fe4040"
-  },
-  {
-    "term": "Credibility",
-    "description": "Critically evaluating information found on the web",
-    "tag": "weblit-Credibility",
-    "deprecates": [],
-    "color": "#ff5984"
-  },
-  {
-    "term": "Security",
-    "description": "Keeping systems, identities, and content safe",
-    "tag": "weblit-Security",
-    "deprecates": [],
-    "color": "#ff004e"
-  },
-  {
-    "term": "Composing for the web",
-    "description": "Creating and curating content for the web",
-    "tag": "weblit-Composing",
-    "deprecates": [],
-    "color": "#01bc85"
-  },
-  {
-    "term": "Remixing",
-    "description": "Modifying existing web resources to create something new",
-    "tag": "weblit-Remix",
-    "deprecates": [],
-    "color": "#00ceb8"
-  },
-  {
-    "term": "Design and Accessibility",
-    "description": "Creating universally effective communications through web resources",
-    "tag": "weblit-DesignAccessibility",
-    "deprecates": [],
-    "color": "#6ecba9"
-  },
-  {
-    "term": "Coding/scripting",
-    "description": "Creating interactive experiences on the web",
-    "tag": "weblit-CodingScripting",
-    "deprecates": [],
-    "color": "#00967f"
-  },
-  {
-    "term": "Infrastructure",
-    "description": "Understanding the Internet stack",
-    "tag": "weblit-Infrastructure",
-    "deprecates": [],
-    "color": "#09b773"
-  },
-  {
-    "term": "Sharing",
-    "description": "Creating web resources with others",
-    "tag": "weblit-Sharing",
-    "deprecates": [
-      "weblit-SharingCollaborating"
-    ],
-    "color": "#739ab1"
-  },
-  {
-    "term": "Collaborating",
-    "description": "Providing access to web resources",
-    "tag": "weblit-Collaborating",
-    "deprecates": [],
-    "color": "#506b7b"
-  },
-  {
-    "term": "Community Participation",
-    "description": "Getting involved in web communities and understanding their practices",
-    "tag": "weblit-Community",
-    "deprecates": [],
-    "color": "#63cfea"
-  },
-  {
-    "term": "Privacy",
-    "description": "Examining the consequences of sharing data online",
-    "tag": "weblit-Privacy",
-    "deprecates": [],
-    "color": "#00bad6"
-  },
-  {
-    "term": "Open Practices",
-    "description": "Helping to keep the web democratic and universally accessible",
-    "tag": "weblit-OpenPractices",
-    "deprecates": [],
-    "color": "#0097d6"
-  }
-];
-WebLiteracyClient.prototype.langs["en"] = {
+WebLiteracyClient.prototype.template = {
+  "title": "Web Literacy Map",
+  "titleKey": "WBLIT-MAP",
+  "versionKey": "WBLIT-VERSION",
+  "version": "1.1.0",
+  "descriptionSuffix": "_desc",
+  "literacies": [
+    {
+      "term": "Navigation",
+      "description": "Using software tools to browse the web",
+      "tag": "weblit-Navigation",
+      "deprecates": [],
+      "color": "#ff4e1f"
+    },
+    {
+      "term": "Web Mechanics",
+      "description": "Understanding the web ecosystem",
+      "tag": "weblit-WebMechanics",
+      "deprecates": [],
+      "color": "#ff6969"
+    },
+    {
+      "term": "Search",
+      "description": "Locating information, people and resources via the web",
+      "tag": "weblit-Search",
+      "deprecates": [],
+      "color": "#fe4040"
+    },
+    {
+      "term": "Credibility",
+      "description": "Critically evaluating information found on the web",
+      "tag": "weblit-Credibility",
+      "deprecates": [],
+      "color": "#ff5984"
+    },
+    {
+      "term": "Security",
+      "description": "Keeping systems, identities, and content safe",
+      "tag": "weblit-Security",
+      "deprecates": [],
+      "color": "#ff004e"
+    },
+    {
+      "term": "Composing for the web",
+      "description": "Creating and curating content for the web",
+      "tag": "weblit-Composing",
+      "deprecates": [],
+      "color": "#01bc85"
+    },
+    {
+      "term": "Remixing",
+      "description": "Modifying existing web resources to create something new",
+      "tag": "weblit-Remix",
+      "deprecates": [],
+      "color": "#00ceb8"
+    },
+    {
+      "term": "Design and Accessibility",
+      "description": "Creating universally effective communications through web resources",
+      "tag": "weblit-DesignAccessibility",
+      "deprecates": [],
+      "color": "#6ecba9"
+    },
+    {
+      "term": "Coding/scripting",
+      "description": "Creating interactive experiences on the web",
+      "tag": "weblit-CodingScripting",
+      "deprecates": [],
+      "color": "#00967f"
+    },
+    {
+      "term": "Infrastructure",
+      "description": "Understanding the Internet stack",
+      "tag": "weblit-Infrastructure",
+      "deprecates": [],
+      "color": "#09b773"
+    },
+    {
+      "term": "Sharing",
+      "description": "Creating web resources with others",
+      "tag": "weblit-Sharing",
+      "deprecates": [
+        "weblit-SharingCollaborating"
+      ],
+      "color": "#739ab1"
+    },
+    {
+      "term": "Collaborating",
+      "description": "Providing access to web resources",
+      "tag": "weblit-Collaborating",
+      "deprecates": [],
+      "color": "#506b7b"
+    },
+    {
+      "term": "Community Participation",
+      "description": "Getting involved in web communities and understanding their practices",
+      "tag": "weblit-Community",
+      "deprecates": [],
+      "color": "#63cfea"
+    },
+    {
+      "term": "Privacy",
+      "description": "Examining the consequences of sharing data online",
+      "tag": "weblit-Privacy",
+      "deprecates": [],
+      "color": "#00bad6"
+    },
+    {
+      "term": "Open Practices",
+      "description": "Helping to keep the web democratic and universally accessible",
+      "tag": "weblit-OpenPractices",
+      "deprecates": [],
+      "color": "#0097d6"
+    }
+  ]
+};
+WebLiteracyClient.prototype.langs["en-US"] = {
   "WBLIT-MAP": "Web Literacy Map",
   "WBLIT-VERSION": "1.1.0",
   "weblit-Navigation": "Navigation",
