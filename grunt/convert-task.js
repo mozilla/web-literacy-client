@@ -7,6 +7,7 @@ function specToTransifex(json) {
   output[json.titleKey] = json.title;
   output[json.versionKey] = json.version;
 
+  // Include literacies
   json.literacies.forEach(function(item) {
     // Check duplicate keys
     if (output[item.tag]) {
@@ -14,6 +15,7 @@ function specToTransifex(json) {
     }
     output[item.tag] = item.term;
     output[item.tag + json.descriptionSuffix] = item.description;
+
     if (item.deprecates.length) {
       item.deprecates.forEach(function(alternate) {
         output[alternate] = item.term;
@@ -21,6 +23,12 @@ function specToTransifex(json) {
       });
     }
   });
+
+  // Include strands
+  json.strands.forEach(function(strand) {
+    output[strand + json.strandSuffix] = strand;
+  });
+
   return output;
 }
 

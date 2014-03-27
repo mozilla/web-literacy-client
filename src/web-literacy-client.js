@@ -6,7 +6,6 @@ function WebLiteracyClient(options) {
 
   // Options
   self.options = options = options || {};
-  self.options.descriptionSuffix = options.descriptionSuffix || '_desc';
 
   // Get supported languages
   self.supportedLangs = function() {
@@ -43,7 +42,7 @@ function WebLiteracyClient(options) {
   };
 
   self.description = function(tag) {
-    return self.strings[tag + options.descriptionSuffix] || self.langs[DEFAULT_LANG][tag + options.descriptionSuffix];
+    return self.strings[tag + self.template.descriptionSuffix] || self.langs[DEFAULT_LANG][tag + self.template.descriptionSuffix];
   };
 
   self.color = function(tag) {
@@ -57,6 +56,19 @@ function WebLiteracyClient(options) {
   // O Canada!
   self.colour = self.color;
 
+  // Get an individual strand strand key
+  self.strand = function(strandTag) {
+    var strandKey = strandTag + self.template.strandSuffix;
+    return self.strings[strandKey] || self.langs[DEFAULT_LANG][strandKey];
+  };
+
+  self.strands = function() {
+    return self.template.strands.map(function(strand) {
+      return self.strings[strand + self.template.strandSuffix] || self.langs[DEFAULT_LANG][strand + self.template.strandSuffix];
+    });
+  };
+
+  // Returns an array of all literacies
   self.all = function() {
     return self.template.literacies.map(function(item) {
       return {
@@ -64,9 +76,25 @@ function WebLiteracyClient(options) {
         tag: item.tag,
         color: item.color,
         colour: item.color,
-        description: self.description(item.tag)
+        description: self.description(item.tag),
+        strand: self.strand(item.strand)
       };
     });
+  };
+
+  // Returns an object, keyed on Strand (localized name)
+  self.allByStrand = function() {
+    var output = {};
+
+    self.strands().forEach(function(strand) {
+      output[strand] = [];
+    });
+
+    self.all().forEach(function(literacy) {
+      output[literacy.strand].push(literacy);
+    });
+
+    return output;
   };
 
 };

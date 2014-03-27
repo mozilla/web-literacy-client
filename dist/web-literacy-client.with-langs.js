@@ -21,7 +21,6 @@ function WebLiteracyClient(options) {
 
   // Options
   self.options = options = options || {};
-  self.options.descriptionSuffix = options.descriptionSuffix || '_desc';
 
   // Get supported languages
   self.supportedLangs = function() {
@@ -58,7 +57,7 @@ function WebLiteracyClient(options) {
   };
 
   self.description = function(tag) {
-    return self.strings[tag + options.descriptionSuffix] || self.langs[DEFAULT_LANG][tag + options.descriptionSuffix];
+    return self.strings[tag + self.template.descriptionSuffix] || self.langs[DEFAULT_LANG][tag + self.template.descriptionSuffix];
   };
 
   self.color = function(tag) {
@@ -72,6 +71,19 @@ function WebLiteracyClient(options) {
   // O Canada!
   self.colour = self.color;
 
+  // Get an individual strand strand key
+  self.strand = function(strandTag) {
+    var strandKey = strandTag + self.template.strandSuffix;
+    return self.strings[strandKey] || self.langs[DEFAULT_LANG][strandKey];
+  };
+
+  self.strands = function() {
+    return self.template.strands.map(function(strand) {
+      return self.strings[strand + self.template.strandSuffix] || self.langs[DEFAULT_LANG][strand + self.template.strandSuffix];
+    });
+  };
+
+  // Returns an array of all literacies
   self.all = function() {
     return self.template.literacies.map(function(item) {
       return {
@@ -79,9 +91,25 @@ function WebLiteracyClient(options) {
         tag: item.tag,
         color: item.color,
         colour: item.color,
-        description: self.description(item.tag)
+        description: self.description(item.tag),
+        strand: self.strand(item.strand)
       };
     });
+  };
+
+  // Returns an object, keyed on Strand (localized name)
+  self.allByStrand = function() {
+    var output = {};
+
+    self.strands().forEach(function(strand) {
+      output[strand] = [];
+    });
+
+    self.all().forEach(function(literacy) {
+      output[literacy.strand].push(literacy);
+    });
+
+    return output;
   };
 
 };
@@ -95,76 +123,92 @@ WebLiteracyClient.prototype.template = {
   "versionKey": "WBLIT-VERSION",
   "version": "1.1.0",
   "descriptionSuffix": "_desc",
+  "strandSuffix": "_strand",
+  "strands": [
+    "Exploring",
+    "Building",
+    "Connecting"
+  ],
   "literacies": [
     {
       "term": "Navigation",
       "description": "Using software tools to browse the web",
       "tag": "weblit-Navigation",
       "deprecates": [],
-      "color": "#ff4e1f"
+      "color": "#ff4e1f",
+      "strand": "Exploring"
     },
     {
       "term": "Web Mechanics",
       "description": "Understanding the web ecosystem",
       "tag": "weblit-WebMechanics",
       "deprecates": [],
-      "color": "#ff6969"
+      "color": "#ff6969",
+      "strand": "Exploring"
     },
     {
       "term": "Search",
       "description": "Locating information, people and resources via the web",
       "tag": "weblit-Search",
       "deprecates": [],
-      "color": "#fe4040"
+      "color": "#fe4040",
+      "strand": "Exploring"
     },
     {
       "term": "Credibility",
       "description": "Critically evaluating information found on the web",
       "tag": "weblit-Credibility",
       "deprecates": [],
-      "color": "#ff5984"
+      "color": "#ff5984",
+      "strand": "Exploring"
     },
     {
       "term": "Security",
       "description": "Keeping systems, identities, and content safe",
       "tag": "weblit-Security",
       "deprecates": [],
-      "color": "#ff004e"
+      "color": "#ff004e",
+      "strand": "Exploring"
     },
     {
       "term": "Composing for the web",
       "description": "Creating and curating content for the web",
       "tag": "weblit-Composing",
       "deprecates": [],
-      "color": "#01bc85"
+      "color": "#01bc85",
+      "strand": "Building"
     },
     {
       "term": "Remixing",
       "description": "Modifying existing web resources to create something new",
       "tag": "weblit-Remix",
       "deprecates": [],
-      "color": "#00ceb8"
+      "color": "#00ceb8",
+      "strand": "Building"
     },
     {
       "term": "Design and Accessibility",
       "description": "Creating universally effective communications through web resources",
       "tag": "weblit-DesignAccessibility",
       "deprecates": [],
-      "color": "#6ecba9"
+      "color": "#6ecba9",
+      "strand": "Building"
     },
     {
       "term": "Coding/scripting",
       "description": "Creating interactive experiences on the web",
       "tag": "weblit-CodingScripting",
       "deprecates": [],
-      "color": "#00967f"
+      "color": "#00967f",
+      "strand": "Building"
     },
     {
       "term": "Infrastructure",
       "description": "Understanding the Internet stack",
       "tag": "weblit-Infrastructure",
       "deprecates": [],
-      "color": "#09b773"
+      "color": "#09b773",
+      "strand": "Building"
     },
     {
       "term": "Sharing",
@@ -173,35 +217,40 @@ WebLiteracyClient.prototype.template = {
       "deprecates": [
         "weblit-SharingCollaborating"
       ],
-      "color": "#739ab1"
+      "color": "#739ab1",
+      "strand": "Connecting"
     },
     {
       "term": "Collaborating",
       "description": "Providing access to web resources",
       "tag": "weblit-Collaborating",
       "deprecates": [],
-      "color": "#506b7b"
+      "color": "#506b7b",
+      "strand": "Connecting"
     },
     {
       "term": "Community Participation",
       "description": "Getting involved in web communities and understanding their practices",
       "tag": "weblit-Community",
       "deprecates": [],
-      "color": "#63cfea"
+      "color": "#63cfea",
+      "strand": "Connecting"
     },
     {
       "term": "Privacy",
       "description": "Examining the consequences of sharing data online",
       "tag": "weblit-Privacy",
       "deprecates": [],
-      "color": "#00bad6"
+      "color": "#00bad6",
+      "strand": "Connecting"
     },
     {
       "term": "Open Practices",
       "description": "Helping to keep the web democratic and universally accessible",
       "tag": "weblit-OpenPractices",
       "deprecates": [],
-      "color": "#0097d6"
+      "color": "#0097d6",
+      "strand": "Connecting"
     }
   ]
 };
@@ -239,7 +288,10 @@ WebLiteracyClient.prototype.langs["en-US"] = {
   "weblit-Privacy": "Privacy",
   "weblit-Privacy_desc": "Examining the consequences of sharing data online",
   "weblit-OpenPractices": "Open Practices",
-  "weblit-OpenPractices_desc": "Helping to keep the web democratic and universally accessible"
+  "weblit-OpenPractices_desc": "Helping to keep the web democratic and universally accessible",
+  "Exploring_strand": "Exploring",
+  "Building_strand": "Building",
+  "Connecting_strand": "Connecting"
 };
 
 
@@ -524,7 +576,7 @@ WebLiteracyClient.prototype.langs["es-MX"] = {
     "weblit-Security_desc": "Mantener sistemas, identidades y contenidos seguros",
     "weblit-Composing": "Redactar para la web",
     "weblit-Composing_desc": "Crear y organizar contenidos para la web ",
-    "weblit-Remix": "Remezclando",
+    "weblit-Remix": "Remezclar",
     "weblit-Remix_desc": "Modificar recursos existentes en la web para crear algo nuevo",
     "weblit-DesignAccessibility": "Diseño y accesibilidad",
     "weblit-DesignAccessibility_desc": "Crear comunicaciones universalmente eficaces a través de recursos web",
@@ -532,12 +584,12 @@ WebLiteracyClient.prototype.langs["es-MX"] = {
     "weblit-CodingScripting_desc": "Crear experiencias interactivas en la web",
     "weblit-Infrastructure": "Infraestructura",
     "weblit-Infrastructure_desc": "Comprender la pila de Internet",
-    "weblit-Sharing": "Sharing",
-    "weblit-Sharing_desc": "Creating web resources with others",
-    "weblit-SharingCollaborating": "Sharing",
-    "weblit-SharingCollaborating_desc": "Creating web resources with others",
-    "weblit-Collaborating": "Collaborating",
-    "weblit-Collaborating_desc": "Providing access to web resources",
+    "weblit-Sharing": "Compartir",
+    "weblit-Sharing_desc": "Crear recursos web con los demás",
+    "weblit-SharingCollaborating": "Compartir",
+    "weblit-SharingCollaborating_desc": "Crear recursos web con los demás",
+    "weblit-Collaborating": "Colaborar",
+    "weblit-Collaborating_desc": "Permitir el acceso a recursos web",
     "weblit-Community": "Participación comunitaria",
     "weblit-Community_desc": "Involucrarse en las comunidades web y comprender sus prácticas",
     "weblit-Privacy": "Privacidad",
