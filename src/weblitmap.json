@@ -4,111 +4,132 @@
   "versionKey": "WBLIT-VERSION",
   "version": "1.1.0",
   "descriptionSuffix": "_desc",
+  "strandSuffix": "_strand",
+  "strands": [
+    "Exploring",
+    "Building",
+    "Connecting"
+  ],
   "literacies": [
     {
         "term": "Navigation",
         "description": "Using software tools to browse the web",
         "tag": "weblit-Navigation",
         "deprecates": [],
-        "color": "#ff4e1f"
+        "color": "#ff4e1f",
+        "strand": "Exploring"
     },
     {
         "term": "Web Mechanics",
         "description": "Understanding the web ecosystem",
         "tag": "weblit-WebMechanics",
         "deprecates": [],
-        "color": "#ff6969"
+        "color": "#ff6969",
+        "strand": "Exploring"
     },
     {
         "term": "Search",
         "description": "Locating information, people and resources via the web",
         "tag": "weblit-Search",
         "deprecates": [],
-        "color": "#fe4040"
+        "color": "#fe4040",
+        "strand": "Exploring"
     },
     {
         "term": "Credibility",
         "description": "Critically evaluating information found on the web",
         "tag": "weblit-Credibility",
         "deprecates": [],
-        "color": "#ff5984"
+        "color": "#ff5984",
+        "strand": "Exploring"
     },
     {
         "term": "Security",
         "description": "Keeping systems, identities, and content safe",
         "tag": "weblit-Security",
         "deprecates": [],
-        "color": "#ff004e"
+        "color": "#ff004e",
+        "strand": "Exploring"
     },
     {
         "term": "Composing for the web",
         "description": "Creating and curating content for the web",
         "tag": "weblit-Composing",
         "deprecates": [],
-        "color": "#01bc85"
+        "color": "#01bc85",
+        "strand": "Building"
     },
     {
         "term": "Remixing",
         "description": "Modifying existing web resources to create something new",
         "tag": "weblit-Remix",
         "deprecates": [],
-        "color": "#00ceb8"
+        "color": "#00ceb8",
+        "strand": "Building"
     },
     {
         "term": "Design and Accessibility",
         "description": "Creating universally effective communications through web resources",
         "tag": "weblit-DesignAccessibility",
         "deprecates": [],
-        "color": "#6ecba9"
+        "color": "#6ecba9",
+        "strand": "Building"
     },
     {
         "term": "Coding/scripting",
         "description": "Creating interactive experiences on the web",
         "tag": "weblit-CodingScripting",
         "deprecates": [],
-        "color": "#00967f"
+        "color": "#00967f",
+        "strand": "Building"
     },
     {
         "term": "Infrastructure",
         "description": "Understanding the Internet stack",
         "tag": "weblit-Infrastructure",
         "deprecates": [],
-        "color": "#09b773"
+        "color": "#09b773",
+        "strand": "Building"
     },
     {
         "term": "Sharing",
         "description": "Creating web resources with others",
         "tag": "weblit-Sharing",
         "deprecates": ["weblit-SharingCollaborating"],
-        "color": "#739ab1"
+        "color": "#739ab1",
+        "strand": "Connecting"
     },
     {
         "term": "Collaborating",
         "description": "Providing access to web resources",
         "tag": "weblit-Collaborating",
         "deprecates": [],
-        "color": "#506b7b"
+        "color": "#506b7b",
+        "strand": "Connecting"
     },
     {
         "term": "Community Participation",
         "description": "Getting involved in web communities and understanding their practices",
         "tag": "weblit-Community",
         "deprecates": [],
-        "color": "#63cfea"
+        "color": "#63cfea",
+        "strand": "Connecting"
     },
     {
         "term": "Privacy",
         "description": "Examining the consequences of sharing data online",
         "tag": "weblit-Privacy",
         "deprecates": [],
-        "color": "#00bad6"
+        "color": "#00bad6",
+        "strand": "Connecting"
     },
     {
         "term": "Open Practices",
         "description": "Helping to keep the web democratic and universally accessible",
         "tag": "weblit-OpenPractices",
         "deprecates": [],
-        "color": "#0097d6"
+        "color": "#0097d6",
+        "strand": "Connecting"
     }
   ]
 }

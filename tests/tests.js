@@ -13,14 +13,6 @@ test('The default lang should exist', function() {
   ok(typeof wlc.langs[DEFAULT_LANG] === 'object');
 });
 
-test('Setting options in the constructor should work', function() {
-  var wlc = new WebLiteracyClient({
-    descriptionSuffix: '-descy'
-  });
-  ok(wlc.options.descriptionSuffix === '-descy');
-  // TODO: more options
-});
-
 test('.lang(language) should set the language', function() {
   var wlc = new WebLiteracyClient();
   ok(wlc.strings);
@@ -42,9 +34,10 @@ test('.supportedLangs() should return an array containing ' + DEFAULT_LANG, func
 
 });
 
+
 test('.version exists', function() {
   var wlc = new WebLiteracyClient();
-  ok(wlc.version === wlc.template.version);
+  equal(wlc.template.version, wlc.version);
 });
 
 test('.title works', function() {
@@ -52,13 +45,17 @@ test('.title works', function() {
   var title = wlc.template.title;
   var term = wlc.all()[0].term;
 
-  console.log(wlc.title());
-
-  ok(wlc.template.title === wlc.title());
+  equal(wlc.template.title, wlc.title());
 
   // Test french
   wlc.lang(TESTLANG);
-  ok(wlc.strings[wlc.template.titleKey] === wlc.title());
+  equal(wlc.strings[wlc.template.titleKey], wlc.title());
+});
+
+test('.strands(), .strand(), .allByStrand() work', function() {
+  var wlc = new WebLiteracyClient();
+  deepEqual(wlc.template.strands, wlc.strands(), '.strands() returns localized array of strands');
+  deepEqual(wlc.template.strands, Object.keys(wlc.allByStrand()), '.allByStrands() returns an object keyed on strand');
 });
 
 test('.term works', function() {
@@ -66,7 +63,7 @@ test('.term works', function() {
   var tag = wlc.all()[0].tag;
   var term = wlc.all()[0].term;
 
-  ok(wlc.term(tag) === term);
+  equal(term, wlc.term(tag));
 });
 
 test('.description works', function() {
@@ -74,7 +71,7 @@ test('.description works', function() {
   var desc = wlc.template.literacies[0].description;
   var tag = wlc.template.literacies[0].tag;
 
-  ok(wlc.description(tag) === desc);
+  equal(desc, wlc.description(tag));
 });
 
 test('.colo[u]r works', function() {
@@ -82,8 +79,8 @@ test('.colo[u]r works', function() {
   var color = wlc.template.literacies[0].color;
   var tag = wlc.template.literacies[0].tag;
 
-  ok(wlc.color(tag) === color);
-  ok(wlc.colour(tag) === color);
+  equal(color, wlc.color(tag));
+  equal(color, wlc.colour(tag));
 });
 
 test('.all works', function() {
@@ -93,22 +90,26 @@ test('.all works', function() {
   wlc.lang(TESTLANG);
   var tag = wlc.template.literacies[testIndex].tag;
   var color = wlc.template.literacies[testIndex].color;
+  var strand = wlc.template.literacies[testIndex].strand;
   var strings = wlc.langs[TESTLANG];
   var enStrings = wlc.langs[DEFAULT_LANG];
 
   var allTest = wlc.all()[testIndex];
 
-  ok(allTest.term === strings[tag]);
-  ok(allTest.color === color);
-  ok(allTest.colour === color);
-  ok(allTest.description === strings[tag + wlc.options.descriptionSuffix]);
+  equal(strings[tag], allTest.term);
+  equal(color, allTest.color);
+  equal(color, allTest.colour);
+  equal(strings[tag + wlc.template.descriptionSuffix], allTest.description);
+  // Needs to be included in transifex
+  // ok(allTest.strand, strings[strand + wlc.template.strandSuffix]);
 
   // Patch in a fake language to test English fall-backs
   wlc.langs['girbberish'] = [];
   wlc.lang('girbberish');
 
   var fakeLangTest = wlc.all()[testIndex];
-  ok(fakeLangTest.term === enStrings[tag]);
-  ok(fakeLangTest.description === enStrings[tag + wlc.options.descriptionSuffix]);
+  equal(enStrings[tag], fakeLangTest.term);
+  equal(enStrings[tag + wlc.template.descriptionSuffix], fakeLangTest.description);
+  equal(enStrings[strand + wlc.template.strandSuffix], fakeLangTest.strand);
 });
 
