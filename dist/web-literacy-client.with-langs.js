@@ -322,9 +322,9 @@ WebLiteracyClient.prototype.langs["bn-BD"] = {
     "weblit-CodingScripting_desc": "ওয়েবে মিথস্ক্রিয় অভিজ্ঞতা তৈরী করা",
     "weblit-Infrastructure": "অবকাঠামো",
     "weblit-Infrastructure_desc": "ইন্টারনেটের স্ট্যাক বোঝা",
-    "weblit-Sharing": "Sharing",
+    "weblit-Sharing": " ছড়িয়ে দিন",
     "weblit-Sharing_desc": "Creating web resources with others",
-    "weblit-SharingCollaborating": "Sharing",
+    "weblit-SharingCollaborating": "ছড়িয়ে দিন",
     "weblit-SharingCollaborating_desc": "Creating web resources with others",
     "weblit-Collaborating": "Collaborating",
     "weblit-Collaborating_desc": "Providing access to web resources",
@@ -333,7 +333,10 @@ WebLiteracyClient.prototype.langs["bn-BD"] = {
     "weblit-Privacy": "গোপনীয়তা",
     "weblit-Privacy_desc": "অনলাইনে তথ্য শেয়ার করার ফলাফল পরীক্ষা করা",
     "weblit-OpenPractices": "মুক্ত চর্চা",
-    "weblit-OpenPractices_desc": "ওয়েবকে গণতান্ত্রিক ও সর্বজনীন প্রবেশযোগ্য রাখতে সাহায্য করা"
+    "weblit-OpenPractices_desc": "ওয়েবকে গণতান্ত্রিক ও সর্বজনীন প্রবেশযোগ্য রাখতে সাহায্য করা",
+    "Exploring_strand": "বিশ্লেষণ করা",
+    "Building_strand": "তৈরী করা",
+    "Connecting_strand": "সংযুক্ত"
 };
 WebLiteracyClient.prototype.langs["bn-IN"] = {
     "WBLIT-MAP": "Web Literacy Map",
@@ -369,7 +372,10 @@ WebLiteracyClient.prototype.langs["bn-IN"] = {
     "weblit-Privacy": "গোপনীয়তা ",
     "weblit-Privacy_desc": "অনলাইনে তথ্য শেয়ারিং এর পরিণতির পূর্বানুমান ",
     "weblit-OpenPractices": "মুক্ত অনুশীলনসমূহ",
-    "weblit-OpenPractices_desc": "ওয়েবকে গণতান্ত্রিক ও সর্বজনীন প্রবেশযোগ্য রাখতে সাহায্য করা  "
+    "weblit-OpenPractices_desc": "ওয়েবকে গণতান্ত্রিক ও সর্বজনীন প্রবেশযোগ্য রাখতে সাহায্য করা  ",
+    "Exploring_strand": "অন্বেষণ",
+    "Building_strand": "গড়ে তোলা",
+    "Connecting_strand": "সংযোজন "
 };
 
 
@@ -408,7 +414,10 @@ WebLiteracyClient.prototype.langs["de"] = {
     "weblit-Privacy": "Privatsphäre",
     "weblit-Privacy_desc": "Die Konsequenzen von Online Datenteilung untersuchen",
     "weblit-OpenPractices": "Offene Vorgehensweisen",
-    "weblit-OpenPractices_desc": "Mithelfen, das Web demokratisch und allgemein zugänglich zu halten"
+    "weblit-OpenPractices_desc": "Mithelfen, das Web demokratisch und allgemein zugänglich zu halten",
+    "Exploring_strand": "Entdecken",
+    "Building_strand": "Erstellen",
+    "Connecting_strand": "Verbindet"
 };
 
 
@@ -448,7 +457,10 @@ WebLiteracyClient.prototype.langs["en-CA"] = {
     "weblit-Privacy": "Privacy",
     "weblit-Privacy_desc": "Examining the consequences of sharing data online",
     "weblit-OpenPractices": "Open Practices",
-    "weblit-OpenPractices_desc": "Helping to keep the web democratic and universally accessible"
+    "weblit-OpenPractices_desc": "Helping to keep the web democratic and universally accessible",
+    "Exploring_strand": "Exploring",
+    "Building_strand": "Building",
+    "Connecting_strand": "Connecting"
 };
 WebLiteracyClient.prototype.langs["en-GB"] = {
     "WBLIT-MAP": "Web Literacy Map",
@@ -484,7 +496,10 @@ WebLiteracyClient.prototype.langs["en-GB"] = {
     "weblit-Privacy": "Privacy",
     "weblit-Privacy_desc": "Examining the consequences of sharing data online",
     "weblit-OpenPractices": "Open Practices",
-    "weblit-OpenPractices_desc": "Helping to keep the web democratic and universally accessible"
+    "weblit-OpenPractices_desc": "Helping to keep the web democratic and universally accessible",
+    "Exploring_strand": "Exploring",
+    "Building_strand": "Building",
+    "Connecting_strand": "Connecting"
 };
 
 WebLiteracyClient.prototype.langs["es"] = {
@@ -521,7 +536,10 @@ WebLiteracyClient.prototype.langs["es"] = {
     "weblit-Privacy": "Privacidad",
     "weblit-Privacy_desc": "Examinando las consecuencias de compartir información en línea",
     "weblit-OpenPractices": "Prácticas Abiertas",
-    "weblit-OpenPractices_desc": "Ayudando a mantener la web democrática y universalmente accesible"
+    "weblit-OpenPractices_desc": "Ayudando a mantener la web democrática y universalmente accesible",
+    "Exploring_strand": "Exploración",
+    "Building_strand": "Construcción",
+    "Connecting_strand": "Conexión"
 };
 
 
@@ -559,7 +577,10 @@ WebLiteracyClient.prototype.langs["es-CL"] = {
     "weblit-Privacy": "Privacidad",
     "weblit-Privacy_desc": "Examinando las consecuencias de compartir información en línea",
     "weblit-OpenPractices": "Prácticas abiertas",
-    "weblit-OpenPractices_desc": "Ayudando a mantener la web democrática y universalmente accesible"
+    "weblit-OpenPractices_desc": "Ayudando a mantener la web democrática y universalmente accesible",
+    "Exploring_strand": "Explorando",
+    "Building_strand": "Construyendo",
+    "Connecting_strand": "Conectando"
 };
 WebLiteracyClient.prototype.langs["es-MX"] = {
     "WBLIT-MAP": "Mapa de Alfabetización Web",
@@ -595,7 +616,10 @@ WebLiteracyClient.prototype.langs["es-MX"] = {
     "weblit-Privacy": "Privacidad",
     "weblit-Privacy_desc": "Examinar las consecuencias de compartir información en línea",
     "weblit-OpenPractices": "Prácticas abiertas",
-    "weblit-OpenPractices_desc": "Ayudar a mantener la web democrática y accesible para todos"
+    "weblit-OpenPractices_desc": "Ayudar a mantener la web democrática y accesible para todos",
+    "Exploring_strand": "Exploración",
+    "Building_strand": "Construir",
+    "Connecting_strand": "Conexión"
 };
 
 
@@ -635,7 +659,10 @@ WebLiteracyClient.prototype.langs["fa"] = {
     "weblit-Privacy": "حریم خصوصی",
     "weblit-Privacy_desc": "بررسی عواقب ناشی از داده های به اشتراک گذاری آنلاین",
     "weblit-OpenPractices": "روش های بازکردن",
-    "weblit-OpenPractices_desc": "کمک به نگه داشتن وب دموکراتیک و جهانی قابل دسترس"
+    "weblit-OpenPractices_desc": "کمک به نگه داشتن وب دموکراتیک و جهانی قابل دسترس",
+    "Exploring_strand": "کاوش گری",
+    "Building_strand": "ساختمان",
+    "Connecting_strand": "اتصال"
 };
 
 
@@ -674,7 +701,10 @@ WebLiteracyClient.prototype.langs["fr"] = {
     "weblit-Privacy": "Vie privée",
     "weblit-Privacy_desc": "Considérer les conséquences du partage de données en ligne",
     "weblit-OpenPractices": "Pratiques ouvertes",
-    "weblit-OpenPractices_desc": "Contribuer à garder le Web démocratique et accessible universellement"
+    "weblit-OpenPractices_desc": "Contribuer à garder le Web démocratique et accessible universellement",
+    "Exploring_strand": "Explorer",
+    "Building_strand": "Créer",
+    "Connecting_strand": "Coopérer"
 };
 
 
@@ -715,7 +745,10 @@ WebLiteracyClient.prototype.langs["hi-IN"] = {
     "weblit-Privacy": "गोपनीयता",
     "weblit-Privacy_desc": "Examining the consequences of sharing data online",
     "weblit-OpenPractices": "खुला अभ्यास",
-    "weblit-OpenPractices_desc": "वेब लोकतांत्रिक और सर्वत्र सुलभ रखने के लिए मदद"
+    "weblit-OpenPractices_desc": "वेब लोकतांत्रिक और सर्वत्र सुलभ रखने के लिए मदद",
+    "Exploring_strand": "\nतलाश",
+    "Building_strand": " निर्माण",
+    "Connecting_strand": "कनेक्ट कर"
 };
 
 
@@ -753,7 +786,10 @@ WebLiteracyClient.prototype.langs["id"] = {
     "weblit-Privacy": "Privasi",
     "weblit-Privacy_desc": "Meneliti konsekuensi dari berbagi data secara online",
     "weblit-OpenPractices": "Praktik Terbuka",
-    "weblit-OpenPractices_desc": "Membantu menjaga agar web tetap demokratis dan dapat diakses secara universal"
+    "weblit-OpenPractices_desc": "Membantu menjaga agar web tetap demokratis dan dapat diakses secara universal",
+    "Exploring_strand": "Menjelajahi",
+    "Building_strand": "Membangun",
+    "Connecting_strand": "Menghubungkan"
 };
 
 WebLiteracyClient.prototype.langs["it"] = {
@@ -790,7 +826,10 @@ WebLiteracyClient.prototype.langs["it"] = {
     "weblit-Privacy": "Privacy",
     "weblit-Privacy_desc": "Esaminare le conseguenze della condivisione online dei dati",
     "weblit-OpenPractices": "Pratiche aperte",
-    "weblit-OpenPractices_desc": "Aiutare a mantenere il web democratico e universalmente accessibile"
+    "weblit-OpenPractices_desc": "Aiutare a mantenere il web democratico e universalmente accessibile",
+    "Exploring_strand": "Esplorare",
+    "Building_strand": "Costruire",
+    "Connecting_strand": "Connettere"
 };
 
 
@@ -828,8 +867,12 @@ WebLiteracyClient.prototype.langs["km"] = {
     "weblit-Privacy": "ភាព​ឯកជន",
     "weblit-Privacy_desc": "ការ​ពិនិត្យមើល​លទ្ធផល​នៃ​ការ​ចែករំលែក​ទិន្នន័យ​លើ​បណ្ដាញ",
     "weblit-OpenPractices": "បើក​ការ​​អនុវត្ត",
-    "weblit-OpenPractices_desc": "ជំនួយ​ក្នុង​ការ​រក្សា​បណ្ដាញ​ទូទៅ និង​អាច​ចូល​ដំណើរការ​បាន​ជា​សកល"
+    "weblit-OpenPractices_desc": "ជំនួយ​ក្នុង​ការ​រក្សា​បណ្ដាញ​ទូទៅ និង​អាច​ចូល​ដំណើរការ​បាន​ជា​សកល",
+    "Exploring_strand": "ការ​រុករក",
+    "Building_strand": "ការ​ស្ថាបនា",
+    "Connecting_strand": "ការ​តភ្ជាប់"
 };
+
 
 
 
@@ -879,7 +922,10 @@ WebLiteracyClient.prototype.langs["nl"] = {
     "weblit-Privacy": "Privacy",
     "weblit-Privacy_desc": "De consequenties van gegevens online delen onderzoeken",
     "weblit-OpenPractices": "Open technieken",
-    "weblit-OpenPractices_desc": "Helpen om het web democratisch en universeel toegankelijk te houden"
+    "weblit-OpenPractices_desc": "Helpen om het web democratisch en universeel toegankelijk te houden",
+    "Exploring_strand": "Ontdekken",
+    "Building_strand": "Maken",
+    "Connecting_strand": "Verbinden"
 };
 
 
@@ -917,7 +963,10 @@ WebLiteracyClient.prototype.langs["pa-IN"] = {
     "weblit-Privacy": "ਗੁਪਤ",
     "weblit-Privacy_desc": "ਆਨਲਾਈਨ ਸ਼ੇਅਰਿੰਗ ਡਾਟਾ ਦੇ ਨਤੀਜੇ ਦੀ ਪੜਤਾਲ ",
     "weblit-OpenPractices": "ਖੁੱਲੇ ਤਜਰਬੇ",
-    "weblit-OpenPractices_desc": "ਲੋਕਤੰਤਰ ਅਤੇ ਵਿਆਪਕ ਦੁਆਰਾ ਵਰਤਣ ਯੋਗ ਵੈੱਬ ਨੂੰ ਰੱਖਣ ਲਈ ਮਦਦ ਕਰਨਾ "
+    "weblit-OpenPractices_desc": "ਲੋਕਤੰਤਰ ਅਤੇ ਵਿਆਪਕ ਦੁਆਰਾ ਵਰਤਣ ਯੋਗ ਵੈੱਬ ਨੂੰ ਰੱਖਣ ਲਈ ਮਦਦ ਕਰਨਾ ",
+    "Exploring_strand": "ਲਭਣਾ",
+    "Building_strand": "ਇਮਾਰਤ",
+    "Connecting_strand": "Connecting"
 };
 
 WebLiteracyClient.prototype.langs["pt"] = {
@@ -954,7 +1003,10 @@ WebLiteracyClient.prototype.langs["pt"] = {
     "weblit-Privacy": "Privacidade",
     "weblit-Privacy_desc": "Examinar as consequências de compartilhar dados online",
     "weblit-OpenPractices": "Práticas abertas",
-    "weblit-OpenPractices_desc": "Ajudar a manter a web democrática e universalmente acessível"
+    "weblit-OpenPractices_desc": "Ajudar a manter a web democrática e universalmente acessível",
+    "Exploring_strand": "Explorar",
+    "Building_strand": "Construir",
+    "Connecting_strand": "Conectar"
 };
 WebLiteracyClient.prototype.langs["pt-BR"] = {
     "WBLIT-MAP": "Padrão de Alfabetização para a Web",
@@ -990,7 +1042,10 @@ WebLiteracyClient.prototype.langs["pt-BR"] = {
     "weblit-Privacy": "Privacidade",
     "weblit-Privacy_desc": "Examinar as consequências de compartilhar dados online",
     "weblit-OpenPractices": "Práticas abertas",
-    "weblit-OpenPractices_desc": "Ajudar a manter a Web democrática e universalmente acessível"
+    "weblit-OpenPractices_desc": "Ajudar a manter a Web democrática e universalmente acessível",
+    "Exploring_strand": "Explorando",
+    "Building_strand": "Construindo",
+    "Connecting_strand": "Conectando"
 };
 
 WebLiteracyClient.prototype.langs["ru"] = {
@@ -1027,7 +1082,10 @@ WebLiteracyClient.prototype.langs["ru"] = {
     "weblit-Privacy": "Конфиденциальность",
     "weblit-Privacy_desc": "Исследование последствий разделения данных онлайн",
     "weblit-OpenPractices": "\"Открытые\" методы работы",
-    "weblit-OpenPractices_desc": "Помощь в сохранении сети демократичной и универсально доступной"
+    "weblit-OpenPractices_desc": "Помощь в сохранении сети демократичной и универсально доступной",
+    "Exploring_strand": "Исследование",
+    "Building_strand": "Разработка",
+    "Connecting_strand": "Соединение"
 };
 
 WebLiteracyClient.prototype.langs["sl"] = {
@@ -1064,7 +1122,10 @@ WebLiteracyClient.prototype.langs["sl"] = {
     "weblit-Privacy": "Zasebnost",
     "weblit-Privacy_desc": "Preučevanje posledic za izmenjavo podatkov na spletu",
     "weblit-OpenPractices": "Praksa",
-    "weblit-OpenPractices_desc": "Pomagajte nam ohraniti splet demokratičen in splošno dostopen"
+    "weblit-OpenPractices_desc": "Pomagajte nam ohraniti splet demokratičen in splošno dostopen",
+    "Exploring_strand": "Raziskovanje",
+    "Building_strand": "Gradnja",
+    "Connecting_strand": "Povezovanje"
 };
 WebLiteracyClient.prototype.langs["sq"] = {
     "WBLIT-MAP": "Harta e Alfabetizmit Web",
@@ -1100,7 +1161,10 @@ WebLiteracyClient.prototype.langs["sq"] = {
     "weblit-Privacy": "Privatësia",
     "weblit-Privacy_desc": "Shqyrtim i pasojave të ndarjes me të tjerët të të dhënave online",
     "weblit-OpenPractices": "Praktika të Hapura",
-    "weblit-OpenPractices_desc": "Si të ndihmohet në ruajtjen e web-it demokratik dhe të përdorshëm nga gjithkush"
+    "weblit-OpenPractices_desc": "Si të ndihmohet në ruajtjen e web-it demokratik dhe të përdorshëm nga gjithkush",
+    "Exploring_strand": "Eksplorim",
+    "Building_strand": "Ndërtim",
+    "Connecting_strand": "Lidhje"
 };
 
 
@@ -1138,7 +1202,10 @@ WebLiteracyClient.prototype.langs["sv"] = {
     "weblit-Privacy": "Integritet",
     "weblit-Privacy_desc": "Utvärdera konsekvenserna av att dela data online",
     "weblit-OpenPractices": "Öppna principer ",
-    "weblit-OpenPractices_desc": "Hjälpa till att bevara webben demokratisk och universellt tillgänglig "
+    "weblit-OpenPractices_desc": "Hjälpa till att bevara webben demokratisk och universellt tillgänglig ",
+    "Exploring_strand": "Upptäck",
+    "Building_strand": "Bygga",
+    "Connecting_strand": "Kontakta"
 };
 
 
@@ -1176,7 +1243,10 @@ WebLiteracyClient.prototype.langs["te"] = {
     "weblit-Privacy": "అంతరంగికత",
     "weblit-Privacy_desc": "అంతర్జాలంలో సమాచారం ను అందుబాటులో ఉంచటం వల్ల కలిగే పరిణామాలను పరీక్షించటం ",
     "weblit-OpenPractices": "పదువురికి ఉపయోగపడే కార్యాలు ",
-    "weblit-OpenPractices_desc": "వెబ్ ను ఒక ప్రజాస్వామ్యంగా ఉంచుతూ అదే విధంగా దానిని విశ్వవ్యాప్తంగా అందుబాటులో ఉంచుటకు సహాయపడుట "
+    "weblit-OpenPractices_desc": "వెబ్ ను ఒక ప్రజాస్వామ్యంగా ఉంచుతూ అదే విధంగా దానిని విశ్వవ్యాప్తంగా అందుబాటులో ఉంచుటకు సహాయపడుట ",
+    "Exploring_strand": "శోధన ",
+    "Building_strand": "తయ్యారుచేయుట ",
+    "Connecting_strand": "అనుసంధానించటం "
 };
 
 WebLiteracyClient.prototype.langs["th-TH"] = {
@@ -1213,7 +1283,10 @@ WebLiteracyClient.prototype.langs["th-TH"] = {
     "weblit-Privacy": "ความเป็นส่วนตัว",
     "weblit-Privacy_desc": "ตรวจสอบผลที่ตามมาของการแบ่งปันข้อมูลออนไลน์",
     "weblit-OpenPractices": "การปฏิบัติแบบเปิดเผย",
-    "weblit-OpenPractices_desc": "ช่วยให้เว็บเป็นแบบระบบประชาธิปไตยและสามารถเข้าถึงได้ในระดับสากล"
+    "weblit-OpenPractices_desc": "ช่วยให้เว็บเป็นแบบระบบประชาธิปไตยและสามารถเข้าถึงได้ในระดับสากล",
+    "Exploring_strand": "สำรวจ",
+    "Building_strand": "สร้าง",
+    "Connecting_strand": "การเชื่อมต่อ"
 };
 
 
@@ -1255,7 +1328,10 @@ WebLiteracyClient.prototype.langs["vi-VN"] = {
     "weblit-Privacy": "Riêng tư",
     "weblit-Privacy_desc": "Xem xét những hậu quả của việc chia sẻ dữ liệu trực tuyến",
     "weblit-OpenPractices": "Những thực tập mở",
-    "weblit-OpenPractices_desc": "Giúp giữ cho mạng có tính dân chủ và có thể sử dụng được toàn cầu"
+    "weblit-OpenPractices_desc": "Giúp giữ cho mạng có tính dân chủ và có thể sử dụng được toàn cầu",
+    "Exploring_strand": "Khám phá",
+    "Building_strand": "cấu trúc",
+    "Connecting_strand": "Kết nối"
 };
 
 
@@ -1294,7 +1370,10 @@ WebLiteracyClient.prototype.langs["zh-TW"] = {
     "weblit-Privacy": "隱私政策",
     "weblit-Privacy_desc": "評估在線上分享資料後的影響",
     "weblit-OpenPractices": "實踐開放",
-    "weblit-OpenPractices_desc": "協助讓 Web 保持民主、隨處可用"
+    "weblit-OpenPractices_desc": "協助讓 Web 保持民主、隨處可用",
+    "Exploring_strand": "探索",
+    "Building_strand": "打造",
+    "Connecting_strand": "連結"
 };
 return WebLiteracyClient;
 
